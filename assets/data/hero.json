@@ -1,0 +1,18 @@
+{
+  "title": "**Empowering** Businesses with **Innovation & Automation**",
+  "subtitle": "Over two decades of expertise in establishing and scaling Shared Services, Process Transformation, and Automation solutions",
+  "cta": [
+    {
+      "text": "Connect With Me",
+      "link": "contact",
+      "type": "btn-primary"
+    },
+    {
+      "text": "Explore My Journey",
+      "link": "expertise",
+      "type": "btn-outline"
+    }
+  ],
+  "image": "assets/images/profile.jpg",
+  "imageAlt": "Saurav Wadhwa - CEO of MYND Integrated Solutions"
+}

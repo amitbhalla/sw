@@ -1,0 +1,46 @@
+{
+  "title": "About Me",
+  "description": "A journey of leadership, innovation, and business transformation",
+  "heading": "Hello, I'm Saurav Wadhwa",
+  "careerStartYear": 2001,
+  "paragraphs": [
+    "As the CEO and Co-Founder of Mynd Integrated Solutions Pvt. Ltd., I bring over two decades of expertise in establishing and scaling Shared Services, Process Transformation, and Automation solutions that drive business excellence.",
+    "Throughout my career, I've played a pivotal role in simplifying business complexities and empowering organizations to achieve operational excellence. My leadership journey has been focused on developing innovative automation solutions that deliver tangible results across finance and HR domains.",
+    "A strong believer that 'Leadership & Learning are indispensable to each other,' I constantly strive to evolve and bring success to every business landscape I touch. When not transforming businesses, you'll find me enjoying my passions as an avid reader and biker."
+  ],
+  "principles": [
+    {
+      "title": "Process Excellence",
+      "icon": "fas fa-cogs",
+      "description": "Streamlining complex business processes to achieve operational efficiency"
+    },
+    {
+      "title": "Innovative Automation",
+      "icon": "fas fa-robot",
+      "description": "Developing cutting-edge solutions that reduce costs and enhance productivity"
+    },
+    {
+      "title": "Strategic Leadership",
+      "icon": "fas fa-chess-king",
+      "description": "Guiding organizations with visionary direction and practical execution"
+    }
+  ],
+  "stats": [
+    {
+      "value": 20,
+      "label": "Years Experience"
+    },
+    {
+      "value": 800,
+      "label": "Businesses Accelerated"
+    },
+    {
+      "value": 21,
+      "label": "Years at MYND"
+    },
+    {
+      "value": 40,
+      "label": "Cost Reduction (%)"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Background Circle -->
+  <circle cx="50" cy="50" r="48" fill="#253c74" />
+  
+  <!-- Letter W -->
+  <path d="M30,30 L40,70 L50,40 L60,70 L70,30" stroke="#ee3897" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Dot Pattern (representing automation/digital) -->
+  <circle cx="25" cy="25" r="2" fill="#ffffff" opacity="0.7" />
+  <circle cx="35" cy="25" r="2" fill="#ffffff" opacity="0.7" />
+  <circle cx="45" cy="25" r="2" fill="#ffffff" opacity="0.7" />
+  <circle cx="75" cy="25" r="2" fill="#ffffff" opacity="0.7" />
+  <circle cx="25" cy="75" r="2" fill="#ffffff" opacity="0.7" />
+  <circle cx="75" cy="75" r="2" fill="#ffffff" opacity="0.7" />
+  <circle cx="25" cy="65" r="2" fill="#ffffff" opacity="0.7" />
+  <circle cx="75" cy="65" r="2" fill="#ffffff" opacity="0.7" />
+</svg>

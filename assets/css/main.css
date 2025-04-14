@@ -1,0 +1,96 @@
+/**
+ * Saurav Wadhwa - BPO/BPM Thought Leader Website
+ * Main CSS Import File
+ * This file imports all modular CSS components
+ */
+
+/* Core Styles */
+@import 'reset.css';
+@import 'variables.css';
+@import 'typography.css';
+@import 'layout.css';
+@import 'animations.css';
+@import 'utilities.css';
+
+/* Component Styles */
+@import 'components/preloader.css';
+@import 'components/header.css';
+@import 'components/buttons.css';
+@import 'components/cards.css';
+@import 'components/forms.css';
+@import 'components/effects.css';
+
+/* Section Styles */
+@import 'components/hero.css';
+@import 'components/about.css';
+@import 'components/expertise.css';
+@import 'components/insights.css';
+@import 'components/experience.css';
+@import 'components/testimonials.css';
+@import 'components/contact.css';
+@import 'components/footer.css';
+
+/* Theme Styles */
+@import 'dark-theme.css';
+
+/* Custom Cursor */
+body {
+    cursor: none;
+}
+
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+
+.cursor-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.cursor-active .cursor-dot {
+    transform: translate(-50%, -50%) scale(1.5);
+}
+
+.cursor-active .cursor-ring {
+    width: 40px;
+    height: 40px;
+    opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+    body {
+        cursor: auto;
+    }
+    
+    .custom-cursor {
+        display: none;
+    }
+}

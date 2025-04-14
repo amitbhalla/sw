@@ -1,0 +1,66 @@
+{
+  "title": "Connect With Me",
+  "description": "Interested in discussing how we can transform your business processes? Let's start a conversation.",
+  "contactMethods": [
+    {
+      "title": "Email & Location",
+      "icon": "fas fa-envelope",
+      "items": [
+        {
+          "text": "saurav.wadhwa@myndsol.com",
+          "type": "link",
+          "href": "mailto:saurav.wadhwa@myndsol.com"
+        },
+        {
+          "text": "Gurgaon - 122011, Haryana, India",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "title": "Professional Network",
+      "icon": "fas fa-user-circle",
+      "items": [
+        {
+          "text": "LinkedIn Profile",
+          "type": "link",
+          "href": "https://www.linkedin.com/in/sauravwadhwa"
+        }
+      ]
+    },
+    {
+      "title": "Company",
+      "icon": "fas fa-building",
+      "items": [
+        {
+          "text": "Mynd Integrated Solutions Pvt. Ltd.",
+          "type": "text"
+        },
+        {
+          "text": "www.myndsol.com",
+          "type": "link",
+          "href": "https://www.myndsol.com"
+        }
+      ]
+    }
+  ],
+  "form": {
+    "name": {
+      "label": "Name",
+      "placeholder": "Your Name"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "Your Email"
+    },
+    "subject": {
+      "label": "Subject",
+      "placeholder": "How can we help transform your business?"
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": "Tell us about your process challenges and objectives..."
+    },
+    "submitText": "Start the Conversation"
+  }
+}

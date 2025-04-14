@@ -1,0 +1,67 @@
+{
+  "title": "Professional Journey",
+  "description": "My career evolution and leadership milestones",
+  "timeline": [
+    {
+      "period": "May 2022 - Present",
+      "position": "Co-Founder & CEO",
+      "company": "Mynd Integrated Solutions Pvt. Ltd.",
+      "description": "Leading MYND's strategic vision and overall operations, empowering businesses with innovative automation solutions while scaling the organization to new heights.",
+      "achievements": [
+        "Spearheaded company-wide transformation initiatives resulting in significant growth",
+        "Expanded service offerings into new industry verticals",
+        "Developed strategic partnerships with global technology providers",
+        "Fostered an innovation-driven culture that delivers exceptional client value"
+      ]
+    },
+    {
+      "period": "April 2018 - May 2022",
+      "position": "Chief Operating Officer",
+      "company": "Mynd Integrated Solutions Pvt. Ltd.",
+      "description": "Directed operational strategy and execution, ensuring service excellence while driving continuous improvement and innovation across the organization.",
+      "achievements": [
+        "Orchestrated operational transformations that enhanced service delivery efficiency",
+        "Implemented scalable processes to support rapid business growth",
+        "Led successful digital transformation initiatives for major enterprise clients",
+        "Built and mentored high-performing teams that consistently exceeded objectives"
+      ]
+    },
+    {
+      "period": "April 2014 - March 2018",
+      "position": "Director - Operations",
+      "company": "Mynd Integrated Solutions Pvt. Ltd.",
+      "description": "Managed all operational aspects of the business, focusing on process excellence, team development, and client satisfaction.",
+      "achievements": [
+        "Established standardized operational frameworks that improved service consistency",
+        "Successfully delivered complex automation projects across multiple client environments",
+        "Developed innovative solutions that resulted in measurable client cost reductions",
+        "Expanded operational capabilities to support increasing client complexity"
+      ]
+    },
+    {
+      "period": "April 2009 - March 2014",
+      "position": "Vice President - Operations",
+      "company": "Mynd Integrated Solutions Pvt. Ltd.",
+      "description": "Oversaw operational delivery and process improvement initiatives, driving efficiency and quality across client engagements.",
+      "achievements": [
+        "Led operational teams through period of significant company growth",
+        "Implemented quality management systems that elevated service standards",
+        "Designed and executed process optimization strategies for key accounts",
+        "Developed client-specific automation solutions that delivered measurable ROI"
+      ]
+    },
+    {
+      "period": "2001 - 2009",
+      "position": "Earlier Roles",
+      "company": "Various Organizations",
+      "description": "Built a strong foundation in finance, audit, and process management through progressive roles at Mynd Integrated Solutions, Suhail Bahwan Group, DTDC Express Limited, and B.N.Kedia & Co.",
+      "achievements": [
+        "Project Manager at Mynd Integrated Solutions (2004-2009)",
+        "Internal Audit Supervisor at Suhail Bahwan Group (2003-2004)",
+        "Assistant Manager Internal Audit at DTDC Express Limited (2002-2003)",
+        "Audit Associate at Suhail Bahwan Group (2001)",
+        "Developed comprehensive expertise in finance, audit, and operational excellence"
+      ]
+    }
+  ]
+}
