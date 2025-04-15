@@ -52,6 +52,49 @@ function fetchInsights() {
         .catch(error => console.error('Error loading insights:', error));
 }
 
+// Fetch featured insights for insights.html
+function fetchFeaturedInsights() {
+    // Only run on insights.html
+    if (!window.location.pathname.endsWith('/pages/insights.html')) return;
+    fetch('../data/insights.json')
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById('featured-insights-container');
+            if (!container) return;
+            let html = '';
+            data.insights.forEach((insight, idx) => {
+                html += `
+                    <div class="featured-insight" data-aos="fade-up" data-aos-delay="${idx * 100}">
+                        <div class="featured-insight-image">
+                            <span class="featured-insight-tag">${insight.tag || ''}</span>
+                            <img src="${insight.image ? insight.image : '/images/blog/automation.jpg'}" alt="${insight.title}">
+                        </div>
+                        <div class="featured-insight-content">
+                            <h2>${insight.title}</h2>
+                            <div class="featured-insight-meta">
+                                ${insight.date ? `<div class='featured-insight-meta-item'><i class='far fa-calendar'></i><span>${insight.date}</span></div>` : ''}
+                                ${insight.readTime ? `<div class='featured-insight-meta-item'><i class='far fa-clock'></i><span>${insight.readTime}</span></div>` : ''}
+                            </div>
+                            <div class="featured-insight-excerpt">
+                                <p>${insight.description}</p>
+                            </div>
+                            <a href="${insight.link}" class="featured-insight-link">${insight.linkText} <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        })
+        .catch(error => console.error('Error loading featured insights:', error));
+}
+
+// Call featured insights fetcher on DOMContentLoaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', fetchFeaturedInsights);
+} else {
+    fetchFeaturedInsights();
+}
+
 // Fetch impact stories from JSON and populate the section
 function fetchImpactStories() {
     fetch('data/impact-stories.json')
