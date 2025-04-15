@@ -78,12 +78,52 @@ function fetchFeaturedInsights() {
                             <div class="featured-insight-excerpt">
                                 <p>${insight.description}</p>
                             </div>
-                            <a href="${insight.link}" class="featured-insight-link">${insight.linkText} <i class="fas fa-arrow-right"></i></a>
+                            <a href="#" class="featured-insight-link" data-insight-index="${idx}">${insight.linkText} <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 `;
             });
             container.innerHTML = html;
+
+            // Modal logic
+            const modal = document.getElementById('insight-modal');
+            const modalClose = document.getElementById('modal-close');
+            const modalOverlay = modal.querySelector('.modal-overlay');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDate = document.getElementById('modal-date');
+            const modalReadTime = document.getElementById('modal-readtime');
+            const modalImage = document.getElementById('modal-image');
+            const modalBody = document.getElementById('modal-body');
+
+            // Open modal on link click
+            container.addEventListener('click', function(e) {
+                const link = e.target.closest('.featured-insight-link');
+                if (link) {
+                    e.preventDefault();
+                    const idx = link.getAttribute('data-insight-index');
+                    const insight = data.insights[idx];
+                    if (insight) {
+                        modalTitle.textContent = insight.title;
+                        modalDate.textContent = insight.date || '';
+                        modalReadTime.textContent = insight.readTime || '';
+                        modalImage.src = insight.image || '';
+                        modalImage.alt = insight.title || '';
+                        modalBody.innerHTML = insight.fullText || '';
+                        modal.style.display = 'flex';
+                        document.body.style.overflow = 'hidden';
+                    }
+                }
+            });
+            // Close modal
+            function closeModal() {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+            modalClose.addEventListener('click', closeModal);
+            modalOverlay.addEventListener('click', closeModal);
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closeModal();
+            });
         })
         .catch(error => console.error('Error loading featured insights:', error));
 }
