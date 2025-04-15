@@ -228,8 +228,16 @@
             }
         }
         .journey-hero {
-    min-height: auto;
-    padding-top: 7rem;
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+    min-height: 400px;
+    box-sizing: border-box;
+}
+@media (max-width: 992px) {
+    .journey-hero {
+        padding-top: 7rem;
+        padding-bottom: 3rem;
+    }
 }
     </style>
 </head>
@@ -263,16 +271,12 @@
         <div class="hero-shape hero-shape-3"></div>
     </div>
     <div class="container hero-container">
-        <div class="hero-content">
+        <div class="hero-content" style="width: 100%">
             <div class="hero-subtitle">My Journey</div>
             <h1 class="hero-title">From Finance Professional to <span class="text-gradient">Transformation Leader</span></h1>
             <p class="hero-description">
                 My career has been defined by a commitment to operational excellence, continuous learning, and creating measurable business value through process transformation.
             </p>
-        </div>
-        <div class="hero-image-container">
-            <div class="hero-image-bg"></div>
-            <img src="/api/placeholder/400/400" alt="Saurav Wadhwa Professional Journey" class="hero-image">
         </div>
     </div>
 </section>
