@@ -1,0 +1,95 @@
+/* 
+ * Container CSS
+ * Main content containers and layout structure
+ */
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.section {
+  padding: var(--space-3xl) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-header {
+  margin-bottom: var(--space-2xl);
+  text-align: center;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title {
+  margin-bottom: var(--space-md);
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6rem;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-500), var(--primary-300));
+  border-radius: var(--radius-full);
+}
+
+.section-description {
+  font-size: 1.8rem;
+  color: var(--text-secondary);
+  max-width: 70rem;
+  margin: 0 auto;
+}
+
+/* Grid system */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1.5rem;
+}
+
+.col {
+  padding: 0 1.5rem;
+  flex: 1;
+}
+
+/* Responsive container */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+  
+  .section-header {
+    margin-bottom: var(--space-xl);
+  }
+}
+
+/* Grid responsive */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+  
+  .col {
+    width: 100%;
+    margin-bottom: var(--space-lg);
+  }
+  
+  .col:last-child {
+    margin-bottom: 0;
+  }
+}

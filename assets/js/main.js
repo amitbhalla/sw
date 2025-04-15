@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         initBackToTop();
         initSwiperSliders();
         initGSAPAnimations();
+        initStatCounters();
     });
 });
 

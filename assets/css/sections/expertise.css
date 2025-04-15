@@ -1,0 +1,203 @@
+/* 
+ * Expertise Section CSS
+ * Skills and services styling
+ */
+
+.expertise-section {
+  background-color: var(--bg-secondary);
+  position: relative;
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.expertise-card {
+  background-color: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  border: 1px solid var(--border-light);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  height: 100%;
+}
+
+.expertise-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-primary);
+}
+
+.expertise-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary-300), var(--primary-600));
+  transition: all var(--transition-normal);
+  z-index: -1;
+}
+
+.expertise-card:hover::before {
+  width: 100%;
+  opacity: 0.05;
+}
+
+.expertise-icon {
+  width: 7rem;
+  height: 7rem;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: var(--accent-primary);
+  background-color: var(--bg-accent);
+  margin-bottom: var(--space-lg);
+  position: relative;
+  transition: all var(--transition-normal);
+}
+
+.expertise-icon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(var(--primary-400-rgb), 0.5), rgba(var(--primary-600-rgb), 0.5));
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.expertise-card:hover .expertise-icon {
+  color: white;
+}
+
+.expertise-card:hover .expertise-icon::after {
+  opacity: 1;
+}
+
+.expertise-title {
+  font-size: 2.2rem;
+  margin-bottom: var(--space-md);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.expertise-description {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+.expertise-list {
+  margin-top: var(--space-lg);
+}
+
+.expertise-list-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  color: var(--text-secondary);
+}
+
+.expertise-list-item i {
+  color: var(--accent-primary);
+  font-size: 1.6rem;
+}
+
+/* Category Tabs */
+.expertise-tabs {
+  margin-bottom: var(--space-xl);
+}
+
+.expertise-tabs-nav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-xl);
+  gap: var(--space-xs);
+  flex-wrap: wrap;
+}
+
+.expertise-tab-button {
+  padding: 1rem 2rem;
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  border-radius: var(--radius-full);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.expertise-tab-button:hover {
+  background-color: var(--bg-accent);
+  color: var(--accent-primary);
+}
+
+.expertise-tab-button.active {
+  background-color: var(--accent-primary);
+  color: white;
+}
+
+/* Skill bars */
+.skills-container {
+  margin-top: var(--space-2xl);
+}
+
+.skill-item {
+  margin-bottom: var(--space-lg);
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-xs);
+}
+
+.skill-name {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.skill-percentage {
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+.skill-bar {
+  height: 8px;
+  background-color: var(--bg-tertiary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-400), var(--primary-600));
+  border-radius: var(--radius-full);
+  position: relative;
+  width: 0;
+  transition: width 1.5s ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .expertise-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .expertise-grid {
+    grid-template-columns: 1fr;
+  }
+}

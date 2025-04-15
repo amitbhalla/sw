@@ -1,0 +1,221 @@
+/* 
+ * Experience Section CSS
+ * Professional timeline and career highlights
+ */
+
+.experience-section {
+  background-color: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-timeline {
+  position: relative;
+  padding-left: 3rem;
+}
+
+.experience-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, 
+      var(--primary-300), 
+      var(--primary-500), 
+      var(--primary-700));
+  border-radius: var(--radius-full);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: var(--space-2xl);
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -3rem;
+  top: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background-color: var(--bg-primary);
+  border: 3px solid var(--accent-primary);
+  z-index: 1;
+  transition: all var(--transition-normal);
+}
+
+.timeline-item:hover::before {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 5px rgba(var(--primary-500-rgb), 0.2);
+}
+
+.timeline-content {
+  background-color: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  transition: all var(--transition-normal);
+  border-left: 3px solid transparent;
+}
+
+.timeline-item:hover .timeline-content {
+  transform: translateX(5px);
+  border-left-color: var(--accent-primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.timeline-period {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--bg-accent);
+  color: var(--accent-primary);
+  border-radius: var(--radius-full);
+  font-weight: 500;
+  font-size: 1.4rem;
+  margin-bottom: var(--space-md);
+  gap: var(--space-xs);
+}
+
+.timeline-period i {
+  font-size: 1.6rem;
+}
+
+.timeline-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+  color: var(--text-primary);
+}
+
+.timeline-company {
+  font-size: 1.6rem;
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.timeline-company i {
+  color: var(--accent-primary);
+}
+
+.timeline-description {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+.timeline-achievements {
+  margin-top: var(--space-lg);
+}
+
+.timeline-achievements-heading {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: var(--space-sm);
+  color: var(--text-primary);
+}
+
+.achievement-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.achievement-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  color: var(--text-secondary);
+}
+
+.achievement-item i {
+  color: var(--accent-primary);
+  font-size: 1.6rem;
+  margin-top: 0.2rem;
+}
+
+/* Alternate timeline */
+.timeline-alternate {
+  max-width: 110rem;
+  margin: 0 auto;
+  position: relative;
+}
+
+.timeline-alternate::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, 
+      var(--primary-300), 
+      var(--primary-500), 
+      var(--primary-700));
+  border-radius: var(--radius-full);
+}
+
+.timeline-alternate .timeline-item {
+  width: 50%;
+  padding: var(--space-lg);
+  position: relative;
+}
+
+.timeline-alternate .timeline-item:nth-child(odd) {
+  padding-right: var(--space-2xl);
+  margin-right: auto;
+}
+
+.timeline-alternate .timeline-item:nth-child(even) {
+  padding-left: var(--space-2xl);
+  margin-left: auto;
+}
+
+.timeline-alternate .timeline-item::before {
+  left: auto;
+  right: -1.3rem;
+}
+
+.timeline-alternate .timeline-item:nth-child(even)::before {
+  left: -1.3rem;
+  right: auto;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .timeline-alternate::before {
+    left: 2rem;
+  }
+  
+  .timeline-alternate .timeline-item {
+    width: 100%;
+    padding-left: 5rem;
+    padding-right: 1rem;
+  }
+  
+  .timeline-alternate .timeline-item::before {
+    left: 0.7rem;
+    right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-content {
+    padding: var(--space-lg);
+  }
+  
+  .timeline-title {
+    font-size: 2rem;
+  }
+}

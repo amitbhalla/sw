@@ -188,17 +188,19 @@ class ContentLoader {
         const aboutText = document.getElementById('about-text');
         if (aboutText) {
             let principlesHtml = '';
-            
+
             if (data.principles && data.principles.length > 0) {
                 principlesHtml = `
-                    <div class="key-principles">
+                    <div class="about-bio-highlights">
                         ${data.principles.map((principle, index) => `
-                            <div class="principle" data-aos="fade-up" data-aos-delay="${150 + (index * 50)}">
-                                <div class="principle-icon">
+                            <div class="bio-highlight-item" data-aos="fade-up" data-aos-delay="${150 + (index * 50)}">
+                                <div class="bio-highlight-icon">
                                     <i class="${principle.icon}"></i>
                                 </div>
-                                <h4>${principle.title}</h4>
-                                <p>${principle.description}</p>
+                                <div class="bio-highlight-content">
+                                    <h3 class="bio-highlight-title">${principle.title}</h3>
+                                    <p>${principle.description}</p>
+                                </div>
                             </div>
                         `).join('')}
                     </div>

@@ -1,0 +1,75 @@
+/* 
+ * Dark Theme CSS
+ * Dark mode specific overrides
+ */
+
+.dark-theme {
+  /* Dark theme specific styles that go beyond CSS variables */
+  
+  /* Header */
+  --shadow-color-header: rgba(0, 0, 0, 0.2);
+}
+
+.dark-theme .header.scrolled {
+  box-shadow: 0 10px 30px var(--shadow-color-header);
+  background-color: rgba(var(--neutral-900-rgb), 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.dark-theme .card,
+.dark-theme .feature-card,
+.dark-theme .testimonial-card,
+.dark-theme .timeline-content,
+.dark-theme .contact-form-container {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .expertise-card::before {
+  background: linear-gradient(to bottom, var(--primary-400), var(--primary-700));
+}
+
+.dark-theme .dot-pattern {
+  background-image: radial-gradient(var(--neutral-700) 1px, transparent 1px);
+}
+
+.dark-theme .profile-image-container {
+  border-color: rgba(var(--primary-400-rgb), 0.3);
+}
+
+.dark-theme .btn-primary {
+  box-shadow: 0 4px 14px rgba(0, 118, 255, 0.4);
+}
+
+.dark-theme .social-link {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.dark-theme .social-link:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* Adjust gradients for dark mode */
+.dark-theme .gradient-sphere,
+.dark-theme .hero-bg-elements::before {
+  opacity: 0.15;
+}
+
+.dark-theme .form-group input,
+.dark-theme .form-group textarea,
+.dark-theme .form-group select {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-medium);
+}
+
+.dark-theme .back-to-top {
+  background-color: var(--bg-secondary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.dark-theme .author-avatar {
+  border-color: var(--accent-primary-hover);
+}
+
+.dark-theme .timeline-item::before {
+  box-shadow: 0 0 0 4px rgba(var(--primary-500-rgb), 0.1);
+}

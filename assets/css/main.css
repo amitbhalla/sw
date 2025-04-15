@@ -1,96 +1,123 @@
-/**
- * Saurav Wadhwa - BPO/BPM Thought Leader Website
- * Main CSS Import File
- * This file imports all modular CSS components
+/* 
+ * Main CSS
+ * Entry point for all styles
  */
 
-/* Core Styles */
-@import 'reset.css';
-@import 'variables.css';
-@import 'typography.css';
-@import 'layout.css';
-@import 'animations.css';
-@import 'utilities.css';
+/* Base styles */
+@import url('base/variables.css');
+@import url('base/reset.css');
+@import url('base/typography.css');
 
-/* Component Styles */
-@import 'components/preloader.css';
-@import 'components/header.css';
-@import 'components/buttons.css';
-@import 'components/cards.css';
-@import 'components/forms.css';
-@import 'components/effects.css';
+/* Layout */
+@import url('layout/container.css');
+@import url('layout/header.css');
+@import url('layout/footer.css');
 
-/* Section Styles */
-@import 'components/hero.css';
-@import 'components/about.css';
-@import 'components/expertise.css';
-@import 'components/insights.css';
-@import 'components/experience.css';
-@import 'components/testimonials.css';
-@import 'components/contact.css';
-@import 'components/footer.css';
+/* Components */
+@import url('components/buttons.css');
+@import url('components/forms.css');
+@import url('components/cards.css');
+@import url('components/animations.css');
+@import url('components/utilities.css');
+@import url('components/responsive.css');
+@import url('components/modals.css');
+@import url('components/loaders.css');
+@import url('components/scrollbar.css');
 
-/* Theme Styles */
-@import 'dark-theme.css';
+/* Sections */
+@import url('sections/hero.css');
+@import url('sections/about.css');
+@import url('sections/expertise.css');
+@import url('sections/insights.css');
+@import url('sections/experience.css');
+@import url('sections/testimonials.css');
+@import url('sections/contact.css');
 
-/* Custom Cursor */
-body {
-    cursor: none;
+/* Themes */
+@import url('themes/dark-theme.css');
+
+/* Custom styles */
+.back-to-top {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  width: 5rem;
+  height: 5rem;
+  border-radius: var(--radius-full);
+  background-color: var(--accent-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+  z-index: var(--z-fixed);
+  box-shadow: var(--shadow-md);
 }
 
-.custom-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    mix-blend-mode: difference;
-    transform: translate(-50%, -50%);
+.back-to-top.active {
+  opacity: 1;
+  visibility: visible;
 }
 
-.cursor-dot {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 8px;
-    height: 8px;
-    background-color: var(--accent-color);
-    border-radius: 50%;
-    transition: transform 0.2s ease;
+.back-to-top:hover {
+  background-color: var(--accent-primary-hover);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
 }
 
-.cursor-ring {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 30px;
-    height: 30px;
-    border: 2px solid var(--accent-color);
-    border-radius: 50%;
-    transition: all 0.2s ease;
+/* Fix for rgb values to be used in rgba functions */
+:root {
+  --primary-300-rgb: 124, 198, 251;
+  --primary-400-rgb: 54, 166, 242;
+  --primary-500-rgb: 26, 145, 230;
+  --primary-600-rgb: 8, 116, 196;
+  --error-500-rgb: 239, 68, 68;
+  --success-500-rgb: 16, 185, 129;
+  --neutral-900-rgb: 15, 23, 42;
 }
 
-.cursor-active .cursor-dot {
-    transform: translate(-50%, -50%) scale(1.5);
+/* Responsive fixes and overrides */
+@media (max-width: 1200px) {
+  :root {
+    --container-width: 110rem;
+  }
 }
 
-.cursor-active .cursor-ring {
-    width: 40px;
-    height: 40px;
-    opacity: 0.5;
+@media (max-width: 992px) {
+  :root {
+    --container-width: 72rem;
+    --header-height: 7rem;
+  }
 }
 
 @media (max-width: 768px) {
-    body {
-        cursor: auto;
-    }
-    
-    .custom-cursor {
-        display: none;
-    }
+  :root {
+    --container-width: 54rem;
+  }
+  
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --container-width: 100%;
+    --header-height: 6rem;
+  }
+  
+  .container {
+    padding: 0 var(--space-md);
+  }
+  
+  .section {
+    padding: var(--space-xl) 0;
+  }
+  
+  .section-header {
+    margin-bottom: var(--space-lg);
+  }
 }
