@@ -4,19 +4,19 @@
         "title": "The Automation-First Fallacy",
         "description": "Most enterprises fail in digital transformation because they automate broken processes. Discover why process optimization must precede automation, and how this sequencing can increase your transformation ROI by over 200%.",
         "linkText": "Read my analysis",
-        "link": "#"
+        "link": "pages/insights.html"
       },
       {
         "title": "The Hidden Cost of Shared Services",
         "description": "While shared service centers promised significant cost savings, 67% of implementations underdeliver. Learn the three critical flaws in traditional shared services models and how to reimagine them for the digital age.",
         "linkText": "Explore the framework",
-        "link": "#"
+        "link": "pages/insights.html"
       },
       {
         "title": "Data Strategy Before Digital Strategy",
         "description": "Your digital transformation is only as good as your data strategy. Discover the four foundational elements of a robust data architecture that enables real-time decision-making and operational agility.",
         "linkText": "Get the playbook",
-        "link": "#"
+        "link": "pages/insights.html"
       }
     ]
   }

@@ -844,8 +844,8 @@ nav {
 
 /* Approach Section */
 .approach {
-    background: var(--darker);
-    color: var(--light);
+    background: var(--light);
+    color: var(--dark, #222);
     position: relative;
     overflow: hidden;
 }
@@ -853,12 +853,12 @@ nav {
 .approach::before {
     content: '';
     position: absolute;
-    width: 800px;
-    height: 800px;
+    width: 1000px;
+    height: 1000px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0) 70%);
-    top: -300px;
-    right: -200px;
+    background: radial-gradient(circle, rgba(67, 97, 238, 0.05) 0%, rgba(255, 255, 255, 0) 70%);
+    top: -400px;
+    right: -400px;
     z-index: 0;
 }
 
@@ -948,7 +948,7 @@ nav {
 }
 
 .pillar-description {
-    color: rgba(255, 255, 255, 0.8);
+    
     font-size: 0.95rem;
     margin-left: 3.5rem;
 }
