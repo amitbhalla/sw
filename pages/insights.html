@@ -410,24 +410,68 @@
 
     <!-- Blog Modal -->
     <div id="insight-modal" class="modal" style="display:none;">
-        <div class="modal-overlay"></div>
-        <div class="modal-content">
-            <span class="modal-close" id="modal-close">&times;</span>
-            <div class="modal-header">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+        <span class="modal-close" id="modal-close">&times;</span>
+        <div class="modal-header enhanced-modal-header">
+            <div class="modal-header-bg"></div>
+            <div class="modal-header-main">
                 <h2 id="modal-title"></h2>
                 <div class="modal-meta">
-                    <span id="modal-date"></span> &bull; <span id="modal-readtime"></span>
+                    <span class="modal-badge" id="modal-tag"></span>
+                    <span class="modal-meta-item"><i class="far fa-calendar"></i> <span id="modal-date"></span></span>
+                    <span class="modal-meta-item"><i class="far fa-clock"></i> <span id="modal-readtime"></span></span>
                 </div>
             </div>
-            <div class="modal-image-wrapper">
-                <img id="modal-image" src="" alt="" style="max-width:100%;height:auto;" />
-            </div>
-            <div class="modal-body" id="modal-body"></div>
+        </div>
+        <hr class="modal-divider" />
+        <div class="modal-image-wrapper">
+            <img id="modal-image" src="" alt="" class="modal-image-enhanced" />
+        </div>
+        <div class="modal-body" id="modal-body"></div>
+        <div id="modal-takeaways-section" class="modal-takeaways-section" style="display:none;">
+            <h3><i class="fas fa-lightbulb"></i> Key Takeaways</h3>
+            <ul id="modal-takeaways"></ul>
+        </div>
+        <div class="modal-share-section">
+            <span>Share:</span>
+            <a href="#" id="modal-share-twitter" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" id="modal-share-linkedin" title="Share on LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="#" id="modal-share-copy" title="Copy Link"><i class="fas fa-link"></i></a>
         </div>
     </div>
+</div>
     <style>
-    .modal { position: fixed; z-index: 2000; left: 0; top: 0; width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.6); }
-    .modal[style*='display:none'] { display: none !important; }
+    .modal { position: fixed; z-index: 2000; left: 0; top: 0; width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.6); transition: opacity 0.3s cubic-bezier(.4,0,.2,1); }
+.modal[style*='display:none'] { display: none !important; }
+.modal-content { position: relative; background: #fff; padding: 2.5rem 2rem 1.5rem 2rem; max-width: 700px; width: 90vw; border-radius: 18px; box-shadow: 0 12px 48px rgba(0,0,0,0.16); z-index: 2; overflow-y: auto; max-height: 90vh; animation: modal-fade-in 0.4s cubic-bezier(.4,0,.2,1); }
+@keyframes modal-fade-in { from { opacity: 0; transform: translateY(40px) scale(0.98); } to { opacity: 1; transform: none; } }
+.modal-close { position: absolute; top: 1.1rem; right: 1.3rem; font-size: 2.2rem; color: #333; cursor: pointer; z-index: 3; transition: color 0.2s; }
+.modal-close:hover { color: var(--primary, #007bff); }
+.enhanced-modal-header { position: relative; margin-bottom: 1.5rem; }
+.modal-header-bg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; background: linear-gradient(90deg, var(--primary, #007bff) 0%, #00c6ff 100%); opacity: 0.09; border-radius: 1rem 1rem 0 0; z-index: 0; }
+.modal-header-main { position: relative; z-index: 1; padding-bottom: 0.5rem; }
+.modal-header-main h2 { font-size: 2.1rem; font-weight: 700; margin-bottom: 0.3rem; letter-spacing: -0.5px; }
+.modal-meta { display: flex; align-items: center; gap: 1.2rem; font-size: 1.02rem; color: #5a5a5a; margin-bottom: 0.2rem; flex-wrap: wrap; }
+.modal-badge { background: var(--primary, #007bff); color: #fff; border-radius: 2em; padding: 0.18em 0.95em; font-size: 0.95em; font-weight: 600; letter-spacing: 0.02em; margin-right: 0.7em; display: inline-block; }
+.modal-meta-item { display: flex; align-items: center; gap: 0.3em; }
+.modal-meta-item i { color: var(--primary, #007bff); font-size: 1.05em; }
+.modal-divider { border: none; border-top: 2.5px solid var(--primary, #007bff); margin: 0 0 1.5rem 0; opacity: 0.13; }
+.modal-image-wrapper { margin-bottom: 1.7rem; text-align: center; }
+.modal-image-enhanced { border-radius: 1.2rem; box-shadow: 0 6px 32px rgba(0,0,0,0.12); max-width: 96%; height: auto; transition: box-shadow 0.2s; }
+.modal-image-enhanced:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.19); }
+.modal-body { color: #232323; font-size: 1.16rem; line-height: 1.85; margin-bottom: 1.6rem; }
+.modal-takeaways-section { background: #f6faff; border-radius: 0.7rem; padding: 1.1rem 1.4rem 1.1rem 1.4rem; margin-bottom: 1.2rem; box-shadow: 0 1px 6px rgba(0,0,0,0.04); }
+.modal-takeaways-section h3 { font-size: 1.13rem; margin-bottom: 0.6rem; color: var(--primary, #007bff); display: flex; align-items: center; gap: 0.4em; }
+#modal-takeaways { margin: 0; padding-left: 1.2em; }
+#modal-takeaways li { margin-bottom: 0.4em; font-size: 1.05em; }
+.modal-share-section { display: flex; align-items: center; gap: 0.7em; font-size: 1.09em; color: #444; margin-top: 0.5rem; border-top: 1.5px solid #e5eaf2; padding-top: 0.7rem; }
+.modal-share-section span { font-weight: 600; margin-right: 0.45em; }
+.modal-share-section a { color: #007bff; text-decoration: none; font-size: 1.22em; transition: color 0.2s; margin-right: 0.2em; }
+.modal-share-section a:last-child { margin-right: 0; }
+.modal-share-section a:hover { color: #0056b3; }
+@media (max-width: 600px) { .modal-content { padding: 1rem 0.4rem; max-width: 98vw; } .modal-header-main h2 { font-size: 1.3rem; } .modal-image-enhanced { max-width: 100%; } .modal-takeaways-section { padding: 0.7rem 0.6rem; } }
+
     .modal-overlay { position: absolute; width: 100%; height: 100%; left: 0; top: 0; background: rgba(0,0,0,0.6); }
     .modal-content { position: relative; background: #fff; padding: 2rem; max-width: 700px; width: 90vw; border-radius: 10px; box-shadow: 0 8px 32px rgba(0,0,0,0.2); z-index: 2; overflow-y: auto; max-height: 90vh; }
     .modal-close { position: absolute; top: 1rem; right: 1rem; font-size: 2rem; color: #333; cursor: pointer; z-index: 3; }

@@ -103,15 +103,42 @@ function fetchFeaturedInsights() {
                     const idx = link.getAttribute('data-insight-index');
                     const insight = data.insights[idx];
                     if (insight) {
-                        modalTitle.textContent = insight.title;
-                        modalDate.textContent = insight.date || '';
-                        modalReadTime.textContent = insight.readTime || '';
-                        modalImage.src = insight.image || '';
-                        modalImage.alt = insight.title || '';
-                        modalBody.innerHTML = insight.fullText || '';
-                        modal.style.display = 'flex';
-                        document.body.style.overflow = 'hidden';
-                    }
+    modalTitle.textContent = insight.title;
+    modalDate.textContent = insight.date || '';
+    modalReadTime.textContent = insight.readTime || '';
+    modalImage.src = insight.image || '';
+    modalImage.alt = insight.title || '';
+    modalBody.innerHTML = insight.fullText || '';
+    // Render tag as badge
+    const modalTag = document.getElementById('modal-tag');
+    modalTag.textContent = insight.tag || '';
+    modalTag.style.display = insight.tag ? 'inline-block' : 'none';
+    // Render key takeaways if present
+    const takeawaysSection = document.getElementById('modal-takeaways-section');
+    const takeawaysList = document.getElementById('modal-takeaways');
+    if (insight.takeaways && Array.isArray(insight.takeaways) && insight.takeaways.length > 0) {
+        takeawaysList.innerHTML = insight.takeaways.map(t => `<li>${t}</li>`).join('');
+        takeawaysSection.style.display = 'block';
+    } else {
+        takeawaysSection.style.display = 'none';
+    }
+    // Share links
+    const shareUrl = window.location.origin + window.location.pathname + '#insight-' + idx;
+    document.getElementById('modal-share-twitter').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(insight.title + ' - ' + shareUrl)}`;
+    document.getElementById('modal-share-linkedin').href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
+    document.getElementById('modal-share-copy').onclick = function(e) {
+        e.preventDefault();
+        navigator.clipboard.writeText(shareUrl).then(() => {
+            this.title = 'Copied!';
+            setTimeout(() => { this.title = 'Copy Link'; }, 1500);
+        });
+    };
+    // Animate modal appearance
+    modal.style.opacity = 0;
+    modal.style.display = 'flex';
+    setTimeout(() => { modal.style.opacity = 1; }, 10);
+    document.body.style.overflow = 'hidden';
+}
                 }
             });
             // Close modal
