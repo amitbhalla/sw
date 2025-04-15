@@ -1,0 +1,72 @@
+{
+    "stories": [
+      {
+        "title": "Finance Transformation for Global Manufacturer",
+        "description": "Reimagined financial reporting processes and implemented intelligent automation, reducing month-end close from 12 days to 3 while improving data accuracy.",
+        "category": "Finance Transformation",
+        "icon": "fas fa-chart-line",
+        "stats": [
+          {
+            "value": "75%",
+            "label": "Close Time Reduction"
+          },
+          {
+            "value": "$2.4M",
+            "label": "Annual Savings"
+          }
+        ],
+        "link": "#"
+      },
+      {
+        "title": "HR Operations Overhaul for Tech Enterprise",
+        "description": "Transformed fragmented HR processes with a digital-first strategy, reducing onboarding time and implementing self-service capabilities that dramatically improved both employee and HR team experience.",
+        "category": "HR Transformation",
+        "icon": "fas fa-users",
+        "stats": [
+          {
+            "value": "85%",
+            "label": "Faster Onboarding"
+          },
+          {
+            "value": "3.5x",
+            "label": "Higher Satisfaction"
+          }
+        ],
+        "link": "#"
+      },
+      {
+        "title": "Supply Chain Visibility Revolution",
+        "description": "Created end-to-end supply chain visibility through process optimization and data integration, enabling real-time decision making and predictive analytics capabilities.",
+        "category": "Supply Chain",
+        "icon": "fas fa-truck",
+        "stats": [
+          {
+            "value": "32%",
+            "label": "Inventory Reduction"
+          },
+          {
+            "value": "99.8%",
+            "label": "Order Accuracy"
+          }
+        ],
+        "link": "#"
+      },
+      {
+        "title": "Procurement Efficiency Breakthrough",
+        "description": "Redesigned procurement processes and implemented cognitive automation, transforming a cost center into a strategic function that drives both savings and supplier innovation.",
+        "category": "Procurement",
+        "icon": "fas fa-shopping-cart",
+        "stats": [
+          {
+            "value": "40%",
+            "label": "Process Cost Reduction"
+          },
+          {
+            "value": "12%",
+            "label": "Spend Optimization"
+          }
+        ],
+        "link": "#"
+      }
+    ]
+  }

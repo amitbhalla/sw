@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights | Saurav Wadhwa | Business Transformation Architect</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700;800&display=swap">
+    
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    
+    <style>
+        /* Insights page specific styles */
+        .insights-hero {
+            padding-top: 8rem;
+            padding-bottom: 5rem;
+            background-color: var(--dark);
+            color: var(--light);
+        }
+        
+        .insights-hero p {
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .featured-insights {
+            padding: 5rem 0;
+        }
+        
+        .featured-insight {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 5rem;
+            align-items: center;
+        }
+        
+        .featured-insight:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .featured-insight:nth-child(even) .featured-insight-content {
+            direction: ltr;
+        }
+        
+        .featured-insight:last-child {
+            margin-bottom: 0;
+        }
+        
+        .featured-insight-image {
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .featured-insight-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .featured-insight:hover .featured-insight-image img {
+            transform: scale(1.05);
+        }
+        
+        .featured-insight-tag {
+            position: absolute;
+            top: 1.5rem;
+            left: 1.5rem;
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+        
+        .featured-insight-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .featured-insight-meta {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .featured-insight-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .featured-insight-meta-item i {
+            color: var(--primary);
+        }
+        
+        .featured-insight-excerpt {
+            margin-bottom: 2rem;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+        
+        .featured-insight-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: gap 0.3s ease;
+        }
+        
+        .featured-insight-link:hover {
+            gap: 1rem;
+        }
+        
+        .featured-insight-link i {
+            transition: transform 0.3s ease;
+        }
+        
+        .featured-insight-link:hover i {
+            transform: translateX(5px);
+        }
+        
+        .insights-grid-section {
+            padding: 5rem 0;
+            background-color: #f8fafc;
+        }
+        
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .insight-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--gray-light);
+        }
+        
+        .insight-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+            border-color: var(--primary);
+        }
+        
+        .insight-card-image {
+            height: 200px;
+            background-color: var(--primary);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .insight-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .insight-card:hover .insight-card-image img {
+            transform: scale(1.1);
+        }
+        
+        .insight-card-tag {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--primary);
+            color: white;
+            padding: 0.3rem 0.75rem;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+        
+        .insight-card-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .insight-card-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--gray);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+        
+        .insight-card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        
+        .insight-card-excerpt {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        
+        .insight-card-link {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+            margin-top: auto;
+        }
+        
+        .insight-card-link:hover {
+            gap: 0.75rem;
+        }
+        
+        .insight-card-link i {
+            transition: transform 0.3s ease;
+        }
+        
+        .insight-card-link:hover i {
+            transform: translateX(3px);
+        }
+        
+        .newsletter-section {
+            padding: 5rem 0;
+            background-color: var(--dark);
+            color: white;
+        }
+        
+        .newsletter-container {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .newsletter-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .newsletter-description {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2.5rem;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .newsletter-input {
+            flex-grow: 1;
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            border: none;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .newsletter-input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+        }
+        
+        .newsletter-button {
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .newsletter-privacy {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+        }
+        
+        @media (max-width: 992px) {
+            .featured-insight {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .featured-insight:nth-child(even) {
+                direction: ltr;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-button {
+                width: 100%;
+            }
+        }
+        .insights-hero {
+    min-height: auto;
+    padding-top: 7rem;
+}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-bolt"></i> Saurav Wadhwa
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html">HOME</a>
+                    <a href="insights.html">INSIGHTS</a>
+                    <a href="journey.html">JOURNEY</a>
+                    <a href="about.html">ABOUT</a>
+                    <a href="contact.html" class="btn btn-secondary">Let's Talk</a>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Insights Hero Section -->
+<section class="hero insights-hero" id="insights-hero">
+    <div class="hero-shapes">
+        <div class="hero-shape hero-shape-1"></div>
+        <div class="hero-shape hero-shape-2"></div>
+        <div class="hero-shape hero-shape-3"></div>
+    </div>
+    <div class="container hero-container">
+        <div class="hero-content">
+            <div class="hero-subtitle">Thought Leadership</div>
+            <h1 class="hero-title">Fresh Perspectives on <span class="text-gradient">Business Transformation</span></h1>
+            <p class="hero-description">
+                Discover actionable insights, frameworks, and strategies that can immediately impact your operational excellence journey.
+            </p>
+        </div>
+        <div class="hero-image-container">
+            <div class="hero-image-bg"></div>
+            <img src="/api/placeholder/400/400" alt="Business Transformation Insights" class="hero-image">
+        </div>
+    </div>
+</section>
+
+    <!-- Featured Insights Section -->
+    <section class="featured-insights">
+        <div class="container">
+            <h2 class="text-center" data-aos="fade-up">Featured Insights</h2>
+            
+            <!-- Featured Insight 1 -->
+            <div class="featured-insight" data-aos="fade-up">
+                <div class="featured-insight-image">
+                    <span class="featured-insight-tag">Process Optimization</span>
+                    <img src="/images/blog/automation.jpg" alt="The Automation-First Fallacy">
+                </div>
+                <div class="featured-insight-content">
+                    <h2>The Automation-First Fallacy</h2>
+                    <div class="featured-insight-meta">
+                        <div class="featured-insight-meta-item">
+                            <i class="far fa-calendar"></i>
+                            <span>April 8, 2025</span>
+                        </div>
+                        <div class="featured-insight-meta-item">
+                            <i class="far fa-clock"></i>
+                            <span>8 min read</span>
+                        </div>
+                    </div>
+                    <div class="featured-insight-excerpt">
+                        <p>Most enterprises fail in digital transformation because they automate broken processes. This comprehensive analysis explains why process optimization must precede automation, and how this sequencing can increase your transformation ROI by over 200%.</p>
+                        <p>Learn the three-step methodology that has helped Fortune 500 companies avoid the common pitfalls of automation projects and deliver sustainable results.</p>
+                    </div>
+                    <a href="#" class="featured-insight-link">Read the full analysis <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- Featured Insight 2 -->
+            <div class="featured-insight" data-aos="fade-up">
+                <div class="featured-insight-image">
+                    <span class="featured-insight-tag">Shared Services</span>
+                    <img src="/images/blog/service.jpg" alt="The Hidden Cost of Shared Services">
+                </div>
+                <div class="featured-insight-content">
+                    <h2>The Hidden Cost of Shared Services</h2>
+                    <div class="featured-insight-meta">
+                        <div class="featured-insight-meta-item">
+                            <i class="far fa-calendar"></i>
+                            <span>March 15, 2025</span>
+                        </div>
+                        <div class="featured-insight-meta-item">
+                            <i class="far fa-clock"></i>
+                            <span>12 min read</span>
+                        </div>
+                    </div>
+                    <div class="featured-insight-excerpt">
+                        <p>While shared service centers promised significant cost savings, 67% of implementations underdeliver. This deep dive reveals the three critical flaws in traditional shared services models and provides a framework for reimagining them for the digital age.</p>
+                        <p>Discover the hybrid approach that balances centralization with business agility, delivering both cost efficiencies and strategic value.</p>
+                    </div>
+                    <a href="#" class="featured-insight-link">Explore the framework <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- Featured Insight 3 -->
+            <div class="featured-insight" data-aos="fade-up">
+                <div class="featured-insight-image">
+                    <span class="featured-insight-tag">Digital Strategy</span>
+                    <img src="/images/blog/data.jpg" alt="Data Strategy Before Digital Strategy">
+                </div>
+                <div class="featured-insight-content">
+                    <h2>Data Strategy Before Digital Strategy</h2>
+                    <div class="featured-insight-meta">
+                        <div class="featured-insight-meta-item">
+                            <i class="far fa-calendar"></i>
+                            <span>February 22, 2025</span>
+                        </div>
+                        <div class="featured-insight-meta-item">
+                            <i class="far fa-clock"></i>
+                            <span>10 min read</span>
+                        </div>
+                    </div>
+                    <div class="featured-insight-excerpt">
+                        <p>Your digital transformation is only as good as your data strategy. This comprehensive guide outlines the four foundational elements of a robust data architecture that enables real-time decision-making and operational agility.</p>
+                        <p>Learn how leading organizations are structuring their data ecosystems to support everything from operational automation to advanced analytics and AI implementation.</p>
+                    </div>
+                    <a href="#" class="featured-insight-link">Get the complete playbook <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- More Insights Grid Section -->
+    <section class="insights-grid-section">
+        <div class="container">
+            <h2 class="text-center" data-aos="fade-up">More Business Transformation Insights</h2>
+            <p class="text-center" style="max-width: 700px; margin: 0 auto;" data-aos="fade-up">
+                Explore my complete collection of articles, frameworks, and thought leadership pieces on operational excellence, process transformation, and digital innovation.
+            </p>
+            
+            <div class="insights-grid">
+                <!-- Insight Card 1 -->
+                <div class="insight-card" data-aos="fade-up">
+                    <div class="insight-card-image">
+                        <span class="insight-card-tag">Employee Experience</span>
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="insight-card-content">
+                        <div class="insight-card-meta">
+                            <span><i class="far fa-calendar" style="margin-right: 5px;"></i> February 5, 2025</span>
+                            <span><i class="far fa-clock" style="margin-right: 5px;"></i> 7 min read</span>
+                        </div>
+                        <h3 class="insight-card-title">The Employee Experience Imperative</h3>
+                        <div class="insight-card-excerpt">
+                            Process improvements that ignore the human element are doomed to fail. Learn how human-centered design principles in process transformation can reduce resistance by 85% and accelerate adoption by 3x.
+                        </div>
+                        <a href="#" class="insight-card-link">Read more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Insight Card 2 -->
+                <div class="insight-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="insight-card-image">
+                        <span class="insight-card-tag">Finance</span>
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="insight-card-content">
+                        <div class="insight-card-meta">
+                            <span><i class="far fa-calendar" style="margin-right: 5px;"></i> January 18, 2025</span>
+                            <span><i class="far fa-clock" style="margin-right: 5px;"></i> 9 min read</span>
+                        </div>
+                        <h3 class="insight-card-title">Reinventing Finance Operations for the Digital Age</h3>
+                        <div class="insight-card-excerpt">
+                            The finance function is transforming from a scorekeeper to a strategic business partner. Discover the five critical capabilities finance organizations need to develop to drive value in the digital economy.
+                        </div>
+                        <a href="#" class="insight-card-link">Read more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Insight Card 3 -->
+                <div class="insight-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="insight-card-image">
+                        <span class="insight-card-tag">RPA</span>
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="insight-card-content">
+                        <div class="insight-card-meta">
+                            <span><i class="far fa-calendar" style="margin-right: 5px;"></i> December 10, 2024</span>
+                            <span><i class="far fa-clock" style="margin-right: 5px;"></i> 8 min read</span>
+                        </div>
+                        <h3 class="insight-card-title">Beyond RPA: The Next Frontier in Intelligent Automation</h3>
+                        <div class="insight-card-excerpt">
+                            Robotic Process Automation (RPA) was just the beginning. Learn how leading organizations are combining RPA with AI, machine learning, and other emerging technologies to create truly intelligent automation ecosystems.
+                        </div>
+                        <a href="#" class="insight-card-link">Read more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Insight Card 4 -->
+                <div class="insight-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="insight-card-image">
+                        <span class="insight-card-tag">Change Management</span>
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <div class="insight-card-content">
+                        <div class="insight-card-meta">
+                            <span><i class="far fa-calendar" style="margin-right: 5px;"></i> November 25, 2024</span>
+                            <span><i class="far fa-clock" style="margin-right: 5px;"></i> 6 min read</span>
+                        </div>
+                        <h3 class="insight-card-title">Why Transformation Initiatives Fail (And How to Ensure Yours Doesn't)</h3>
+                        <div class="insight-card-excerpt">
+                            70% of transformation initiatives fail to achieve their objectives. This analysis identifies the five most common pitfalls and provides a practical framework for managing the human side of change.
+                        </div>
+                        <a href="#" class="insight-card-link">Read more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Insight Card 5 -->
+                <div class="insight-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="insight-card-image">
+                        <span class="insight-card-tag">HR</span>
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="insight-card-content">
+                        <div class="insight-card-meta">
+                            <span><i class="far fa-calendar" style="margin-right: 5px;"></i> October 30, 2024</span>
+                            <span><i class="far fa-clock" style="margin-right: 5px;"></i> 10 min read</span>
+                        </div>
+                        <h3 class="insight-card-title">The Future of HR: From Administration to Strategic Value Creation</h3>
+                        <div class="insight-card-excerpt">
+                            HR is at a crossroads. This deep dive explores how forward-thinking HR functions are reimagining everything from talent acquisition to employee experience and workforce analytics.
+                        </div>
+                        <a href="#" class="insight-card-link">Read more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Insight Card 6 -->
+                <div class="insight-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="insight-card-image">
+                        <span class="insight-card-tag">AI</span>
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="insight-card-content">
+                        <div class="insight-card-meta">
+                            <span><i class="far fa-calendar" style="margin-right: 5px;"></i> October 8, 2024</span>
+                            <span><i class="far fa-clock" style="margin-right: 5px;"></i> 11 min read</span>
+                        </div>
+                        <h3 class="insight-card-title">Practical AI: Real-World Applications in Business Process Management</h3>
+                        <div class="insight-card-excerpt">
+                            Beyond the hype, how are organizations actually using AI to transform their operations? This case study collection showcases practical applications that are delivering measurable value today.
+                        </div>
+                        <a href="#" class="insight-card-link">Read more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column footer-brand">
+                    <h3><i class="fas fa-bolt"></i> Saurav Wadhwa</h3>
+                    <p>Business Transformation Architect & Process Excellence Expert with over two decades of experience helping enterprises maximize operational efficiency and drive sustainable growth.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/sauravwadhwa/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Navigate</h3>
+                    <div class="footer-links">
+                        <a href="../index.html">Home</a>
+                        <a href="insights.html">Insights</a>
+                        <a href="impact-stories.html">Impact Stories</a>
+                        <a href="about.html">About</a>
+                        <a href="journey.html">Journey</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Contact</h3>
+                    <div class="footer-contact">
+                        <i class="fas fa-envelope"></i>
+                        <div class="footer-contact-info">
+                            <strong>Email</strong>
+                            <a href="mailto:saurav.wadhwa@myndsol.com">saurav.wadhwa@myndsol.com</a>
+                        </div>
+                    </div>
+                    <div class="footer-contact">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="footer-contact-info">
+                            <strong>Location</strong>
+                            <span>Gurgaon, Haryana, India</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    &copy; <span id="current-year">2025</span> Saurav Wadhwa. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/animations.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                mirror: false
+            });
+            
+            // Newsletter form submission
+            const newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('input').value;
+                    
+                    // In a real implementation, this would send the email to a server
+                    console.log('Newsletter subscription:', email);
+                    
+                    alert('Thank you for subscribing to our newsletter!');
+                    this.reset();
+                });
+            }
+            
+            // Update copyright year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>

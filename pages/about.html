@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Saurav Wadhwa | Business Transformation Architect</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700;800&display=swap">
+    
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    
+    <style>
+        /* About page specific styles */
+        .about-hero {
+            padding-top: 8rem;
+            padding-bottom: 5rem;
+        }
+        
+        .about-section {
+            padding: 5rem 0;
+        }
+        
+        .about-bio {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-image {
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .philosophy-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .philosophy-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--gray-light);
+            transition: all 0.3s ease;
+        }
+        
+        .philosophy-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
+        
+        .philosophy-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(67, 97, 238, 0.1);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .expertise-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        .expertise-item {
+            background: rgba(67, 97, 238, 0.05);
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .expertise-item:hover {
+            background: rgba(67, 97, 238, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        .expertise-item i {
+            color: var(--primary);
+        }
+        
+        .education-timeline {
+            margin-top: 3rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .education-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gray-light);
+        }
+        
+        .education-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+        }
+        
+        .education-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+        }
+        
+        .education-institution {
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            font-size: 1.1rem;
+        }
+        
+        .education-degree {
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+        }
+        
+        .education-years {
+            font-size: 0.9rem;
+            color: var(--gray);
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(67, 97, 238, 0.1);
+            border-radius: 2rem;
+        }
+        
+        .personal-note {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 0;
+            margin-top: 5rem;
+        }
+        
+        .personal-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .personal-quote {
+            font-size: clamp(1.25rem, 2vw, 1.5rem);
+            line-height: 1.6;
+            font-style: italic;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .personal-quote::before,
+        .personal-quote::after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--primary);
+            line-height: 0;
+            position: absolute;
+        }
+        
+        .personal-quote::before {
+            top: 0.5rem;
+            left: -1.5rem;
+        }
+        
+        .personal-quote::after {
+            bottom: -0.5rem;
+            right: -1.5rem;
+        }
+        
+        @media (max-width: 992px) {
+            .about-bio {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .about-image {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+        .about-hero {
+    min-height: auto;
+    padding-top: 7rem;
+}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-bolt"></i> Saurav Wadhwa
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html">HOME</a>
+                    <a href="insights.html">INSIGHTS</a>
+                    <a href="journey.html">JOURNEY</a>
+                    <a href="about.html">ABOUT</a>
+                    <a href="contact.html" class="btn btn-secondary">Let's Talk</a>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Hero Section -->
+    <!-- About Hero Section -->
+<section class="hero about-hero" id="about-hero">
+    <div class="hero-shapes">
+        <div class="hero-shape hero-shape-1"></div>
+        <div class="hero-shape hero-shape-2"></div>
+        <div class="hero-shape hero-shape-3"></div>
+    </div>
+    <div class="container hero-container">
+        <div class="hero-content">
+            <div class="hero-subtitle">About Me</div>
+            <h1 class="hero-title">Building Business Excellence Through <span class="text-gradient">Process Transformation</span></h1>
+            <p class="hero-description">
+                With over two decades of expertise in establishing and scaling Shared Services, Process Transformation, and Automation, I've helped more than 800 businesses across multiple industries achieve operational excellence.
+            </p>
+        </div>
+        <div class="hero-image-container">
+            <div class="hero-image-bg"></div>
+            <img src="/api/placeholder/400/400" alt="Saurav Wadhwa - Business Transformation Architect" class="hero-image">
+        </div>
+    </div>
+</section>
+
+    <!-- Biography Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-bio">
+                <div class="about-content" data-aos="fade-right">
+                    <h2>My Story</h2>
+                    <p>As the CEO of MYND Integrated Solutions, I've led transformational initiatives for businesses ranging from mid-sized enterprises to Fortune 500 companies. My journey began in finance and audit, giving me a unique perspective on operational efficiency and risk management that informs my approach to business transformation.</p>
+                    <p>Throughout my career, I've witnessed the evolution of business process management from basic outsourcing to sophisticated digital transformation. This experience has shaped my philosophy: true transformation requires harmony between people, processes, and technology, with a relentless focus on delivering measurable business outcomes.</p>
+                    <p>My background in finance, coupled with deep operational expertise, allows me to bridge the gap between strategic vision and practical execution—creating solutions that not only optimize processes but drive sustainable competitive advantage.</p>
+                </div>
+                <div class="about-image" data-aos="fade-left">
+                    <img src="/api/placeholder/600/700" alt="Saurav Wadhwa">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="about-section" style="background-color: #f8fafc;">
+        <div class="container">
+            <div class="about-philosophy" data-aos="fade-up">
+                <h2>My Transformation Philosophy</h2>
+                <p>My approach to business transformation is guided by four core principles that ensure sustainable results and meaningful change:</p>
+                
+                <div class="philosophy-cards">
+                    <div class="philosophy-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="philosophy-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Data-Driven Decisions</h3>
+                        <p>Every transformation begins with rigorous analysis, ensuring solutions address root causes rather than symptoms.</p>
+                    </div>
+                    
+                    <div class="philosophy-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="philosophy-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Human-Centered Design</h3>
+                        <p>Process optimization must enhance the human experience, whether for employees, customers, or partners.</p>
+                    </div>
+                    
+                    <div class="philosophy-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="philosophy-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3>Sustainable Results</h3>
+                        <p>True transformation builds organizational capabilities that enable continuous improvement long after our engagement ends.</p>
+                    </div>
+                    
+                    <div class="philosophy-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="philosophy-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Strategic Alignment</h3>
+                        <p>Operational excellence initiatives must directly support broader business goals and contribute to competitive advantage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-expertise" data-aos="fade-up">
+                <h2>Areas of Expertise</h2>
+                <p>With experience across multiple industries and functional domains, I bring specialized expertise in:</p>
+                
+                <div class="expertise-list">
+                    <div class="expertise-item" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-building"></i>
+                        <span>Shared Services Design & Optimization</span>
+                    </div>
+                    
+                    <div class="expertise-item" data-aos="fade-up" data-aos-delay="150">
+                        <i class="fas fa-calculator"></i>
+                        <span>Finance Transformation</span>
+                    </div>
+                    
+                    <div class="expertise-item" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-user-tie"></i>
+                        <span>HR Process Excellence</span>
+                    </div>
+                    
+                    <div class="expertise-item" data-aos="fade-up" data-aos-delay="250">
+                        <i class="fas fa-robot"></i>
+                        <span>Intelligent Automation</span>
+                    </div>
+                    
+                    <div class="expertise-item" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>Digital Transformation Strategy</span>
+                    </div>
+                    
+                    <div class="expertise-item" data-aos="fade-up" data-aos-delay="350">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Process Mining & Analytics</span>
+                    </div>
+                    
+                    <div class="expertise-item" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Change Management</span>
+                    </div>
+                    
+                    <div class="expertise-item" data-aos="fade-up" data-aos-delay="450">
+                        <i class="fas fa-medal"></i>
+                        <span>Operational Excellence</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="about-section" style="background-color: #f8fafc;">
+        <div class="container">
+            <div class="about-education" data-aos="fade-up">
+                <h2>Education & Credentials</h2>
+                <p>My academic foundation and professional certifications that support my expertise:</p>
+                
+                <div class="education-timeline">
+                    <div class="education-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="education-institution">Institute of Chartered Accountants of India</div>
+                        <div class="education-degree">CA Intermediate</div>
+                        <div class="education-years">1997-2001</div>
+                    </div>
+                    
+                    <div class="education-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="education-institution">PGDAV College, Delhi University</div>
+                        <div class="education-degree">Bachelor of Commerce (B.Com)</div>
+                        <div class="education-years">1995-1998</div>
+                    </div>
+                    
+                    <div class="education-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="education-institution">National Institute of Information Technology</div>
+                        <div class="education-degree">Swift India Diploma</div>
+                        <div class="education-years">1999-2000</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Note Section -->
+    <section class="personal-note">
+        <div class="container">
+            <div class="personal-content" data-aos="fade-up">
+                <h2>Beyond Business</h2>
+                <div class="personal-quote">
+                    Leadership & Learning are indispensable to each other. I believe that continuous growth and pushing beyond comfort zones is essential for personal and professional development.
+                </div>
+                <p>Outside of work, I'm an avid reader and passionate biker. These pursuits keep me grounded, inspire creative thinking, and fuel my passion for continuous improvement.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column footer-brand">
+                    <h3><i class="fas fa-bolt"></i> Saurav Wadhwa</h3>
+                    <p>Business Transformation Architect & Process Excellence Expert with over two decades of experience helping enterprises maximize operational efficiency and drive sustainable growth.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/sauravwadhwa/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Navigate</h3>
+                    <div class="footer-links">
+                        <a href="../index.html">Home</a>
+                        <a href="../index.html#insights">Insights</a>
+                        <a href="../index.html#impact">Impact Stories</a>
+                        <a href="about.html">About</a>
+                        <a href="journey.html">Journey</a>
+                        <a href="../index.html#contact">Contact</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Contact</h3>
+                    <div class="footer-contact">
+                        <i class="fas fa-envelope"></i>
+                        <div class="footer-contact-info">
+                            <strong>Email</strong>
+                            <a href="mailto:saurav.wadhwa@myndsol.com">saurav.wadhwa@myndsol.com</a>
+                        </div>
+                    </div>
+                    <div class="footer-contact">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="footer-contact-info">
+                            <strong>Location</strong>
+                            <span>Gurgaon, Haryana, India</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    &copy; <span id="current-year">2025</span> Saurav Wadhwa. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/animations.js"></script>
+</body>
+</html>

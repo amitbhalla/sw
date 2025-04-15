@@ -1,0 +1,101 @@
+{
+    "headline": "My Professional Journey",
+    "introduction": "From finance professional to transformation leader, my career has been defined by a commitment to operational excellence and value creation.",
+    "journey": [
+      {
+        "period": "May 2022 - Present",
+        "role": "Co-Founder & CEO",
+        "company": "Mynd Integrated Solutions Pvt. Ltd.",
+        "description": "Leading a team of transformation experts to help businesses achieve operational excellence through process optimization and intelligent automation.",
+        "achievements": [
+          "Expanded service offerings to include AI-powered automation solutions",
+          "Grew client base by 40% in first year of leadership",
+          "Established strategic partnerships with leading technology providers"
+        ]
+      },
+      {
+        "period": "April 2018 - May 2022",
+        "role": "Chief Operating Officer",
+        "company": "Mynd Integrated Solutions Pvt. Ltd.",
+        "description": "Oversaw all operational aspects of the business, ensuring delivery excellence and client satisfaction across transformation engagements.",
+        "achievements": [
+          "Designed and implemented scalable delivery framework",
+          "Achieved 35% year-over-year revenue growth",
+          "Maintained 95% client retention rate"
+        ]
+      },
+      {
+        "period": "April 2014 - March 2018",
+        "role": "Director - Operations",
+        "company": "Mynd Integrated Solutions Pvt. Ltd.",
+        "description": "Led the operations team in delivering process transformation solutions across finance, HR, and supply chain functions.",
+        "achievements": [
+          "Expanded service portfolio to include digital transformation",
+          "Established center of excellence for robotic process automation",
+          "Achieved 30% improvement in delivery efficiency"
+        ]
+      },
+      {
+        "period": "May 2004 - April 2009",
+        "role": "Project Manager",
+        "company": "Mynd Integrated Solutions Pvt. Ltd.",
+        "description": "Managed process transformation projects for clients across multiple industries, ensuring on-time, on-budget delivery with measurable results.",
+        "achievements": [
+          "Successfully delivered 50+ transformation projects",
+          "Developed proprietary process assessment methodology",
+          "Maintained 100% client satisfaction rating"
+        ]
+      },
+      {
+        "period": "June 2003 - April 2004",
+        "role": "Internal Audit Supervisor",
+        "company": "Suhail Bahwan Group (Holding) LLC",
+        "description": "Conducted internal audits and risk assessments across the conglomerate's diverse business units.",
+        "achievements": [
+          "Identified process improvement opportunities that led to 15% cost reduction",
+          "Implemented standardized audit processes across business units",
+          "Enhanced compliance with internal controls framework"
+        ]
+      },
+      {
+        "period": "February 2002 - May 2003",
+        "role": "Assistant Manager Internal Audit",
+        "company": "DTDC Express Limited",
+        "description": "Responsible for internal audit functions, compliance oversight, and process improvement initiatives."
+      },
+      {
+        "period": "January 2001 - December 2001",
+        "role": "Audit Associate",
+        "company": "Suhail Bahwan Group (Holding) LLC",
+        "description": "Conducted financial and operational audits for various business units within the group."
+      },
+      {
+        "period": "August 1997 - October 2000",
+        "role": "Articled Assistant",
+        "company": "B.N.Kedia & Co.",
+        "description": "Performed accounting, audit, and tax compliance work while pursuing professional certification."
+      }
+    ],
+    "milestones": [
+      {
+        "year": 2002,
+        "title": "Began career in business process improvement",
+        "description": "Started focusing on identifying and implementing process efficiencies"
+      },
+      {
+        "year": 2008,
+        "title": "First large-scale transformation project",
+        "description": "Led end-to-end finance transformation for a multinational manufacturing company"
+      },
+      {
+        "year": 2014,
+        "title": "Pioneered RPA implementation",
+        "description": "Among the first in India to successfully implement Robotic Process Automation at scale"
+      },
+      {
+        "year": 2022,
+        "title": "Appointed CEO",
+        "description": "Took leadership of Mynd Integrated Solutions to drive next phase of growth"
+      }
+    ]
+  }

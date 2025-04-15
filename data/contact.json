@@ -1,0 +1,45 @@
+{
+    "headline": "Let's Transform Your Business Operations",
+    "description": "I only work with a select number of clients each month to ensure I deliver exceptional results. Schedule your free consultation now to secure your spot.",
+    "contactInfo": {
+      "email": "saurav.wadhwa@myndsol.com",
+      "linkedin": "https://www.linkedin.com/in/sauravwadhwa",
+      "location": "Gurgaon, Haryana, India"
+    },
+    "formFields": [
+      {
+        "id": "name",
+        "label": "Full Name",
+        "type": "text",
+        "placeholder": "Your name",
+        "required": true
+      },
+      {
+        "id": "email",
+        "label": "Email Address",
+        "type": "email",
+        "placeholder": "Your email",
+        "required": true
+      },
+      {
+        "id": "company",
+        "label": "Company",
+        "type": "text",
+        "placeholder": "Your company",
+        "required": true
+      },
+      {
+        "id": "challenge",
+        "label": "Your Biggest Operational Challenge",
+        "type": "textarea",
+        "placeholder": "Tell me about your current operational challenges...",
+        "required": true
+      }
+    ],
+    "submitButton": {
+      "text": "Schedule My Free Consultation",
+      "icon": "fa-calendar-check"
+    },
+    "callToAction": "Or send an email directly to <a href='mailto:saurav.wadhwa@myndsol.com'>saurav.wadhwa@myndsol.com</a>",
+    "privacyNotice": "Your information is secure and will never be shared with third parties"
+  }

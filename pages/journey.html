@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Journey | Saurav Wadhwa</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700;800&display=swap">
+    
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    
+    <style>
+        /* Journey page specific styles */
+        .journey-hero {
+            padding-top: 8rem;
+            padding-bottom: 5rem;
+        }
+        
+        .timeline-section {
+            padding: 5rem 0;
+            position: relative;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--gray-light);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            padding: 0 3rem 4rem 3rem;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            top: 0;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd)::after {
+            right: -13px;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -13px;
+        }
+        
+        .timeline-date {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .timeline-content {
+            padding: 2rem;
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid var(--gray-light);
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary);
+        }
+        
+        .timeline-role {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .timeline-company {
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .timeline-description {
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+        }
+        
+        .timeline-achievements {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .timeline-achievements li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .timeline-achievements li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        .milestones-section {
+            background-color: var(--dark);
+            color: white;
+            padding: 5rem 0;
+        }
+        
+        .milestones-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .milestones-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .milestone-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .milestone-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .milestone-year {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .milestone-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .milestone-description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+        }
+        
+        @media (max-width: 992px) {
+            .timeline::before {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 0;
+                text-align: left;
+            }
+            
+            .timeline-item:nth-child(odd) {
+                text-align: left;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item::after {
+                left: 18px !important;
+                right: auto !important;
+            }
+        }
+        .journey-hero {
+    min-height: auto;
+    padding-top: 7rem;
+}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-bolt"></i> Saurav Wadhwa
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html">HOME</a>
+                    <a href="insights.html">INSIGHTS</a>
+                    <a href="journey.html">JOURNEY</a>
+                    <a href="about.html">ABOUT</a>
+                    <a href="contact.html" class="btn btn-secondary">Let's Talk</a>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Journey Hero Section -->
+<section class="hero journey-hero" id="journey-hero">
+    <div class="hero-shapes">
+        <div class="hero-shape hero-shape-1"></div>
+        <div class="hero-shape hero-shape-2"></div>
+        <div class="hero-shape hero-shape-3"></div>
+    </div>
+    <div class="container hero-container">
+        <div class="hero-content">
+            <div class="hero-subtitle">My Journey</div>
+            <h1 class="hero-title">From Finance Professional to <span class="text-gradient">Transformation Leader</span></h1>
+            <p class="hero-description">
+                My career has been defined by a commitment to operational excellence, continuous learning, and creating measurable business value through process transformation.
+            </p>
+        </div>
+        <div class="hero-image-container">
+            <div class="hero-image-bg"></div>
+            <img src="/api/placeholder/400/400" alt="Saurav Wadhwa Professional Journey" class="hero-image">
+        </div>
+    </div>
+</section>
+
+    <!-- Career Timeline Section -->
+    <section class="timeline-section">
+        <div class="container">
+            <h2 class="text-center" data-aos="fade-up">Professional Experience</h2>
+            <p class="text-center" style="max-width: 800px; margin: 0 auto 3rem;" data-aos="fade-up">
+                My extensive experience spans across multiple industries and functional domains, providing me with a well-rounded perspective on business transformation.
+            </p>
+            
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-date">May 2022 - Present</div>
+                    <div class="timeline-content">
+                        <div class="timeline-role">Co-Founder & CEO</div>
+                        <div class="timeline-company">Mynd Integrated Solutions Pvt. Ltd.</div>
+                        <div class="timeline-description">
+                            Leading a team of transformation experts to help businesses achieve operational excellence through process optimization and intelligent automation.
+                        </div>
+                        <ul class="timeline-achievements">
+                            <li>Expanded service offerings to include AI-powered automation solutions</li>
+                            <li>Grew client base by 40% in first year of leadership</li>
+                            <li>Established strategic partnerships with leading technology providers</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-date">April 2018 - May 2022</div>
+                    <div class="timeline-content">
+                        <div class="timeline-role">Chief Operating Officer</div>
+                        <div class="timeline-company">Mynd Integrated Solutions Pvt. Ltd.</div>
+                        <div class="timeline-description">
+                            Oversaw all operational aspects of the business, ensuring delivery excellence and client satisfaction across transformation engagements.
+                        </div>
+                        <ul class="timeline-achievements">
+                            <li>Designed and implemented scalable delivery framework</li>
+                            <li>Achieved 35% year-over-year revenue growth</li>
+                            <li>Maintained 95% client retention rate</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-date">April 2014 - March 2018</div>
+                    <div class="timeline-content">
+                        <div class="timeline-role">Director - Operations</div>
+                        <div class="timeline-company">Mynd Integrated Solutions Pvt. Ltd.</div>
+                        <div class="timeline-description">
+                            Led the operations team in delivering process transformation solutions across finance, HR, and supply chain functions.
+                        </div>
+                        <ul class="timeline-achievements">
+                            <li>Expanded service portfolio to include digital transformation</li>
+                            <li>Established center of excellence for robotic process automation</li>
+                            <li>Achieved 30% improvement in delivery efficiency</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-date">May 2004 - April 2009</div>
+                    <div class="timeline-content">
+                        <div class="timeline-role">Project Manager</div>
+                        <div class="timeline-company">Mynd Integrated Solutions Pvt. Ltd.</div>
+                        <div class="timeline-description">
+                            Managed process transformation projects for clients across multiple industries, ensuring on-time, on-budget delivery with measurable results.
+                        </div>
+                        <ul class="timeline-achievements">
+                            <li>Successfully delivered 50+ transformation projects</li>
+                            <li>Developed proprietary process assessment methodology</li>
+                            <li>Maintained 100% client satisfaction rating</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-date">June 2003 - April 2004</div>
+                    <div class="timeline-content">
+                        <div class="timeline-role">Internal Audit Supervisor</div>
+                        <div class="timeline-company">Suhail Bahwan Group (Holding) LLC</div>
+                        <div class="timeline-description">
+                            Conducted internal audits and risk assessments across the conglomerate's diverse business units.
+                        </div>
+                        <ul class="timeline-achievements">
+                            <li>Identified process improvement opportunities that led to 15% cost reduction</li>
+                            <li>Implemented standardized audit processes across business units</li>
+                            <li>Enhanced compliance with internal controls framework</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-date">February 2002 - May 2003</div>
+                    <div class="timeline-content">
+                        <div class="timeline-role">Assistant Manager Internal Audit</div>
+                        <div class="timeline-company">DTDC Express Limited</div>
+                        <div class="timeline-description">
+                            Responsible for internal audit functions, compliance oversight, and process improvement initiatives.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-date">January 2001 - December 2001</div>
+                    <div class="timeline-content">
+                        <div class="timeline-role">Audit Associate</div>
+                        <div class="timeline-company">Suhail Bahwan Group (Holding) LLC</div>
+                        <div class="timeline-description">
+                            Conducted financial and operational audits for various business units within the group.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-date">August 1997 - October 2000</div>
+                    <div class="timeline-content">
+                        <div class="timeline-role">Articled Assistant</div>
+                        <div class="timeline-company">B.N.Kedia & Co.</div>
+                        <div class="timeline-description">
+                            Performed accounting, audit, and tax compliance work while pursuing professional certification.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Milestones Section -->
+    <section class="milestones-section">
+        <div class="container">
+            <div class="milestones-title" data-aos="fade-up">
+                <h2>Key Milestones</h2>
+                <p style="max-width: 800px; margin: 0 auto;">
+                    Significant moments in my professional journey that have shaped my expertise and approach to business transformation.
+                </p>
+            </div>
+            
+            <div class="milestones-grid">
+                <div class="milestone-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="milestone-year">2002</div>
+                    <div class="milestone-title">Began Career in Business Process Improvement</div>
+                    <div class="milestone-description">Started focusing on identifying and implementing process efficiencies</div>
+                </div>
+                
+                <div class="milestone-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="milestone-year">2008</div>
+                    <div class="milestone-title">First Large-Scale Transformation Project</div>
+                    <div class="milestone-description">Led end-to-end finance transformation for a multinational manufacturing company</div>
+                </div>
+                
+                <div class="milestone-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="milestone-year">2014</div>
+                    <div class="milestone-title">Pioneered RPA Implementation</div>
+                    <div class="milestone-description">Among the first in India to successfully implement Robotic Process Automation at scale</div>
+                </div>
+                
+                <div class="milestone-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="milestone-year">2022</div>
+                    <div class="milestone-title">Appointed CEO</div>
+                    <div class="milestone-description">Took leadership of Mynd Integrated Solutions to drive next phase of growth</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column footer-brand">
+                    <h3><i class="fas fa-bolt"></i> Saurav Wadhwa</h3>
+                    <p>Business Transformation Architect & Process Excellence Expert with over two decades of experience helping enterprises maximize operational efficiency and drive sustainable growth.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/sauravwadhwa/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Navigate</h3>
+                    <div class="footer-links">
+                        <a href="../index.html">Home</a>
+                        <a href="../index.html#insights">Insights</a>
+                        <a href="../index.html#impact">Impact Stories</a>
+                        <a href="about.html">About</a>
+                        <a href="journey.html">Journey</a>
+                        <a href="../index.html#contact">Contact</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Contact</h3>
+                    <div class="footer-contact">
+                        <i class="fas fa-envelope"></i>
+                        <div class="footer-contact-info">
+                            <strong>Email</strong>
+                            <a href="mailto:saurav.wadhwa@myndsol.com">saurav.wadhwa@myndsol.com</a>
+                        </div>
+                    </div>
+                    <div class="footer-contact">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="footer-contact-info">
+                            <strong>Location</strong>
+                            <span>Gurgaon, Haryana, India</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    &copy; <span id="current-year">2025</span> Saurav Wadhwa. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact Stories | Saurav Wadhwa | Business Transformation Architect</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700;800&display=swap">
+    
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    
+    <style>
+        /* Impact Stories page specific styles */
+        .impact-hero {
+            padding-top: 8rem;
+            padding-bottom: 5rem;
+            background-color: var(--dark);
+            color: var(--light);
+        }
+        
+        .impact-hero p {
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .featured-case-study {
+            padding: 5rem 0;
+            background-color: #f8fafc;
+        }
+        
+        .featured-case-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+        
+        .featured-case-image {
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+            position: relative;
+            height: 100%;
+            min-height: 450px;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 5rem;
+        }
+        
+        .featured-case-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.9) 0%, rgba(79, 70, 229, 0.9) 100%);
+            opacity: 0.8;
+            z-index: 1;
+        }
+        
+        .featured-case-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .featured-case-logo {
+            position: absolute;
+            z-index: 2;
+            width: 120px;
+            height: 120px;
+            background: white;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .featured-case-info {
+            padding-right: 2rem;
+        }
+        
+        .featured-case-category {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(67, 97, 238, 0.1);
+            color: var(--primary);
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        .featured-case-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+        
+        .featured-case-description {
+            color: var(--gray);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+        
+        .featured-case-results {
+            margin-bottom: 2.5rem;
+        }
+        
+        .result-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+        
+        .result-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .result-text {
+            flex-grow: 1;
+            font-weight: 500;
+        }
+        
+        .featured-case-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.75rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .featured-case-cta:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.3);
+        }
+        
+        .more-cases-section {
+            padding: 5rem 0;
+        }
+        
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .case-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--gray-light);
+        }
+        
+        .case-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+            border-color: var(--primary);
+        }
+        
+        .case-card-image {
+            height: 200px;
+            background-color: var(--primary);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .case-card-category {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: white;
+            color: var(--primary);
+            padding: 0.3rem 0.75rem;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+        
+        .case-card-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .case-card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+        
+        .case-card-description {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+        
+        .case-card-results {
+            margin-bottom: 1.5rem;
+        }
+        
+        .case-result-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--gray);
+        }
+        
+        .case-result-item i {
+            color: var(--success);
+        }
+        
+        .case-card-link {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+            margin-top: auto;
+        }
+        
+        .case-card-link:hover {
+            gap: 0.75rem;
+        }
+        
+        .case-card-link i {
+            transition: transform 0.3s ease;
+        }
+        
+        .case-card-link:hover i {
+            transform: translateX(3px);
+        }
+        
+        .industries-section {
+            padding: 5rem 0;
+            background-color: var(--dark);
+            color: white;
+        }
+        
+        .industries-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .industry-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .industry-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .industry-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .industry-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .industry-description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .cta-section {
+            padding: 5rem 0;
+            background-color: #f8fafc;
+            text-align: center;
+        }
+        
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-description {
+            color: var(--gray);
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 2.5rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(37, 99, 235, 0.3);
+        }
+        
+        @media (max-width: 992px) {
+            .featured-case-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .featured-case-image {
+                min-height: 350px;
+            }
+            
+            .featured-case-info {
+                padding-right: 0;
+            }
+        }
+        .impact-hero {
+    min-height: auto;
+    padding-top: 7rem;
+}
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="../index.html" class="logo">
+                    <i class="fas fa-bolt"></i> Saurav Wadhwa
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html">HOME</a>
+                    <a href="insights.html">INSIGHTS</a>
+                    <a href="journey.html">JOURNEY</a>
+                    <a href="about.html">ABOUT</a>
+                    <a href="contact.html" class="btn btn-secondary">Let's Talk</a>
+                </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Impact Hero Section -->
+    <section class="hero impact-hero" id="impact-hero">
+        <div class="hero-shapes">
+            <div class="hero-shape hero-shape-1"></div>
+            <div class="hero-shape hero-shape-2"></div>
+            <div class="hero-shape hero-shape-3"></div>
+    </div>
+    <div class="container hero-container">
+        <div class="hero-content">
+            <div class="hero-subtitle">Success Stories</div>
+            <h1 class="hero-title">Real-World <span class="text-gradient">Transformation Results</span></h1>
+            <p class="hero-description">
+                Don't just take my word for it. Explore how I've helped organizations across industries achieve measurable operational improvements and drive sustainable business value.
+            </p>
+        </div>
+        <div class="hero-image-container">
+            <div class="hero-image-bg"></div>
+            <img src="/api/placeholder/400/400" alt="Impact Stories - Saurav Wadhwa" class="hero-image">
+        </div>
+    </div>
+    </section>
+
+    <!-- Featured Case Study Section -->
+    <section class="featured-case-study">
+        <div class="container">
+            <h2 class="text-center" data-aos="fade-up">Featured Case Study</h2>
+            
+            
+            <div class="featured-case-content">
+                <div class="featured-case-image" data-aos="fade-right">
+                    <i class="fas fa-building"></i>
+                    <div class="featured-case-logo">
+                        <i class="fas fa-industry fa-3x" style="color: var(--primary);"></i>
+                    </div>
+                </div>
+                <div class="featured-case-info" data-aos="fade-left">
+                    <span class="featured-case-category">Finance Transformation</span>
+                    <h2 class="featured-case-title">Global Manufacturer Achieves Finance Excellence</h2>
+                    <div class="featured-case-description">
+                        <p>A Fortune 500 manufacturing company was struggling with a 12-day month-end close process, inconsistent financial reporting, and high manual effort across their finance operations.</p>
+                        <p>We reimagined their entire finance function, optimizing core processes and implementing intelligent automation solutions that transformed both efficiency and effectiveness.</p>
+                    </div>
+                    <div class="featured-case-results">
+                        <div class="result-item">
+                            <div class="result-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="result-text">Reduced month-end close from 12 days to 3 days</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="result-text">Achieved $2.4M in annual cost savings</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="result-text">Improved data accuracy from 92% to 99.8%</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div class="result-text">Freed up 40% of finance team time for value-added activities</div>
+                        </div>
+                    </div>
+                    <a href="#" class="featured-case-cta">
+                        Read Full Case Study <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- More Case Studies Section -->
+    <section class="more-cases-section">
+        <div class="container">
+            <h2 class="text-center" data-aos="fade-up">More Success Stories</h2>
+            <p class="text-center" style="max-width: 700px; margin: 0 auto;" data-aos="fade-up">
+                Explore how my transformation approach has delivered measurable results across various industries and functional areas.
+            </p>
+            
+            <div class="cases-grid">
+                <!-- Case Study Card 1 -->
+                <div class="case-card" data-aos="fade-up">
+                    <div class="case-card-image">
+                        <span class="case-card-category">HR Transformation</span>
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="case-card-content">
+                        <h3 class="case-card-title">HR Operations Overhaul for Tech Enterprise</h3>
+                        <div class="case-card-description">
+                            Transformed fragmented HR processes with a digital-first strategy, reducing onboarding time and implementing self-service capabilities that dramatically improved both employee and HR team experience.
+                        </div>
+                        <div class="case-card-results">
+                            <div class="case-result-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>85% faster onboarding</span>
+                            </div>
+                            <div class="case-result-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>3.5x higher satisfaction scores</span>
+                            </div>
+                            <div class="case-result-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>42% reduction in HR operational costs</span>
+                            </div>
+                        </div>
+                        <a href="#" class="case-card-link">Read case study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Case Study Card 2 -->
+                <div class="case-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="case-card-image">
+                        <span class="case-card-category">Supply Chain</span>
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="case-card-content">
+                        <h3 class="case-card-title">Supply Chain Visibility Revolution</h3>
+                        <div class="case-card-description">
+                            Created end-to-end supply chain visibility through process optimization and data integration, enabling real-time decision making and predictive analytics capabilities.
+                        </div>
+                        <div class="case-card-results">
+                            <div class="case-result-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>32% inventory reduction</span>
+                            </div>
+                            <div class="case-result-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>99.8% order accuracy</span>
+                            </div>
+                            <div class="case-result-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>28% decrease in expedited shipping costs</span>
+                            </div>
+                        </div>
+                        <a href="#" class="case-card-link">Read case study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Case Study Card 3 -->
+                <div class="case-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="case-card-image">
+                        <span class="case-card-category">Procurement</span>
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="case-card-content">
+                        <h3 class="case-card-title">Procurement Efficiency Breakthrough</h3>
+                        <div class="case-card-description">
+                            Redesigned procurement processes and implemented cognitive automation, transforming a cost center into a strategic function that drives both savings and supplier innovation.
+                        </div>
+                        <div class="case-card-results">
+                            <div class="case-result-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>40% process cost reduction</span>
+                            </div>
+                            <div class="case-result-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>12% spend optimization</span>
+                            </div>
+                            <div class="case-result-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>65% faster supplier onboarding</span>
+                            </div>
+                        </div>
+                        <a href="#" class="case-card-link">Read case study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Case Study Card 4 -->
+                <div class="case-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="case-card-image">
+                        <span class="case-card-category">Digital Transformation</span>
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="case-card-content">
+                        <h3 class="case-card-title">Financial Services Digital Overhaul</h3>
+                        <div class="case-card-description">
+                            Led end-to-end digital transformation for a mid-sized financial services firm, reimagining customer journeys and core operations through strategic process optimization and technology implementation.
+                        </div>
+                        <div class="case-card-results">
+                            <div class="case-result-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>60% reduction in processing time</span>
+                            </div>
+                            <div class="case-result-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>43% increase in customer satisfaction</span>
+                            </div>
+                            <div class="case-result-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>22% improvement in operational efficiency</span>
+                            </div>
+                        </div>
+                        <a href="#" class="case-card-link">Read case study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Case Study Card 5 -->
+                <div class="case-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="case-card-image">
+                        <span class="case-card-category">Shared Services</span>
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="case-card-content">
+                        <h3 class="case-card-title">Next-Gen Shared Services Center</h3>
+                        <div class="case-card-description">
+                            Designed and implemented a global shared services center for a multinational corporation, incorporating advanced automation and analytics capabilities from day one.
+                        </div>
+                        <div class="case-card-results">
+                            <div class="case-result-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>45% cost reduction vs. previous model</span>
+                            </div>
+                            <div class="case-result-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>70% of processes automated from launch</span>
+                            </div>
+                            <div class="case-result-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>18% year-over-year productivity improvement</span>
+                            </div>
+                        </div>
+                        <a href="#" class="case-card-link">Read case study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Case Study Card 6 -->
+                <div class="case-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="case-card-image">
+                        <span class="case-card-category">Employer Branding</span>
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="case-card-content">
+                        <h3 class="case-card-title">Employer Branding Campaign</h3>
+                        <div class="case-card-description">
+                            Fast-growing company struggling with talent acquisition in competitive industry. High recruitment costs and extended time-to-fill for critical positions.
+                        </div>
+                        <div class="case-card-results">
+                            <div class="case-result-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Reduced recruitment advertising spend by 42%</span>
+                            </div>
+                            <div class="case-result-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Increased qualified applicants by 87%</span>
+                            </div>
+                            <div class="case-result-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Improved employee retention by 23%</span>
+                            </div>
+                        </div>
+                        <a href="#" class="case-card-link">Read case study <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section class="industries-section">
+        <div class="container">
+            <div class="industries-title" data-aos="fade-up">
+                <h2>Industries I've Transformed</h2>
+                <p style="max-width: 700px; margin: 0 auto;">
+                    My experience spans across multiple sectors, bringing best practices and innovative approaches to various industries.
+                </p>
+            </div>
+            
+            <div class="industries-grid">
+                <div class="industry-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="industry-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3 class="industry-name">Manufacturing</h3>
+                    <p class="industry-description">
+                        Optimizing production processes, streamlining supply chains, and implementing Industry 4.0 solutions.
+                    </p>
+                </div>
+                
+                <div class="industry-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="industry-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3 class="industry-name">Financial Services</h3>
+                    <p class="industry-description">
+                        Modernizing operations, enhancing compliance processes, and improving customer journeys.
+                    </p>
+                </div>
+                
+                <div class="industry-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="industry-icon">
+                        <i class="fas fa-laptop-medical"></i>
+                    </div>
+                    <h3 class="industry-name">Healthcare</h3>
+                    <p class="industry-description">
+                        Optimizing administrative processes, enhancing patient experience, and improving operational efficiency.
+                    </p>
+                </div>
+                
+                <div class="industry-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="industry-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 class="industry-name">Technology</h3>
+                    <p class="industry-description">
+                        Scaling operations, streamlining R&D processes, and building high-performance shared services.
+                    </p>
+                </div>
+                
+                <div class="industry-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="industry-icon">
+                        <i class="fas fa-shopping-bag"></i>
+                    </div>
+                    <h3 class="industry-name">Retail</h3>
+                    <p class="industry-description">
+                        Enhancing supply chain visibility, optimizing inventory management, and improving customer experience.
+                    </p>
+                </div>
+                
+                <div class="industry-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="industry-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3 class="industry-name">Travel & Hospitality</h3>
+                    <p class="industry-description">
+                        Streamlining operations, enhancing guest experience, and implementing digital transformation.
+                    </p>
+                </div>
+                
+                <div class="industry-card" data-aos="fade-up" data-aos-delay="700">
+                    <div class="industry-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3 class="industry-name">Logistics</h3>
+                    <p class="industry-description">
+                        Optimizing distribution networks, enhancing visibility, and implementing digital solutions.
+                    </p>
+                </div>
+                
+                <div class="industry-card" data-aos="fade-up" data-aos-delay="800">
+                    <div class="industry-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="industry-name">Professional Services</h3>
+                    <p class="industry-description">
+                        Optimizing service delivery, enhancing client experience, and improving operational efficiency.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column footer-brand">
+                    <h3><i class="fas fa-bolt"></i> Saurav Wadhwa</h3>
+                    <p>Business Transformation Architect & Process Excellence Expert with over two decades of experience helping enterprises maximize operational efficiency and drive sustainable growth.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/sauravwadhwa/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Navigate</h3>
+                    <div class="footer-links">
+                        <a href="../index.html">Home</a>
+                        <a href="insights.html">Insights</a>
+                        <a href="impact-stories.html">Impact Stories</a>
+                        <a href="about.html">About</a>
+                        <a href="journey.html">Journey</a>
+                        <a href="contact.html">Contact</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Contact</h3>
+                    <div class="footer-contact">
+                        <i class="fas fa-envelope"></i>
+                        <div class="footer-contact-info">
+                            <strong>Email</strong>
+                            <a href="mailto:saurav.wadhwa@myndsol.com">saurav.wadhwa@myndsol.com</a>
+                        </div>
+                    </div>
+                    <div class="footer-contact">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="footer-contact-info">
+                            <strong>Location</strong>
+                            <span>Gurgaon, Haryana, India</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    &copy; <span id="current-year">2025</span> Saurav Wadhwa. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="../js/main.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/animations.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                mirror: false
+            });
+            
+            // Update copyright year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>

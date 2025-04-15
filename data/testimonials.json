@@ -1,0 +1,28 @@
+{
+    "testimonials": [
+      {
+        "content": "Saurav's strategic approach to business transformation delivered results far beyond our expectations. His ability to balance deep technical knowledge with business acumen helped us reduce operational costs by 42% while improving service quality. What sets him apart is his holistic view of transformation, addressing people, process, and technology in perfect harmony.",
+        "name": "Rajiv Mehta",
+        "position": "Chief Financial Officer",
+        "company": "Global Manufacturing Corp"
+      },
+      {
+        "content": "We had attempted digital transformation twice before working with Saurav, with minimal results. His diagnostic approach uncovered the root issues that previous consultants had missed. Within 6 months, we achieved process efficiency improvements that translated to $3.2M in annual savings. More importantly, our team now has the capabilities to sustain and build upon these improvements.",
+        "name": "Priya Sharma",
+        "position": "VP of Operations",
+        "company": "Tech Solutions Inc."
+      },
+      {
+        "content": "What impressed me most about working with Saurav was his commitment to sustainable results. Unlike other consultants who implement solutions and leave, he ensured knowledge transfer and built internal capabilities that allow us to continuously improve. Three years after our initial engagement, we're still reaping the benefits of his transformation methodology.",
+        "name": "Vikram Singh",
+        "position": "CEO",
+        "company": "Innovate Services Ltd"
+      },
+      {
+        "content": "Saurav has a remarkable ability to translate complex business challenges into clear, actionable strategies. His process optimization work for our HR function revolutionized how we operate, reducing our hiring timeline by 65% and dramatically improving candidate experience. The ROI on our engagement with him was evident within the first quarter.",
+        "name": "Anita Desai",
+        "position": "CHRO",
+        "company": "NextGen Enterprises"
+      }
+    ]
+  }

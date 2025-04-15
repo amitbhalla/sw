@@ -3,212 +3,310 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saurav Wadhwa | BPO/BPM Thought Leader</title>
-    <meta name="description" content="Saurav Wadhwa, a thought leader in Business Process Outsourcing & Management, driving digital transformation and intelligent automation solutions.">
+    <title>Saurav Wadhwa | Business Transformation Architect | Process Excellence</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- AOS (Animate On Scroll) -->
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600;700;800&display=swap">
+    
+    <!-- AOS Animation Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     
-    <!-- Swiper.js -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.3.1/swiper-bundle.min.css">
-    
-    <!-- Stunning New Design System CSS -->
-    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
 </head>
 <body>
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="loader">
-            <svg class="logo-svg" width="100" height="100" viewBox="0 0 100 100">
-                <path class="logo-path" d="M20,50 L80,50 M50,20 L50,80" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
-            </svg>
-        </div>
-    </div>
-
     <!-- Header -->
-    <header id="header" class="header">
+    <header>
         <div class="container">
-            <div class="header-container">
+            <nav>
                 <a href="#" class="logo">
-                    <span class="logo-text" id="header-logo"></span>
+                    <i class="fas fa-bolt"></i> Saurav Wadhwa
                 </a>
-                <nav class="nav">
-                    <ul class="nav-list" id="nav-list"></ul>
-                </nav>
-                <div class="header-actions">
-                    <div class="theme-toggle">
-                        <i class="fas fa-moon"></i>
-                    </div>
-                    <div class="menu-toggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
+                <div class="nav-links">
+                    <a href="index.html">HOME</a>
+                    <a href="pages/insights.html">INSIGHTS</a>
+                    <a href="pages/journey.html">JOURNEY</a>
+                    <a href="pages/about.html">ABOUT</a>
+                    <a href="pages/contact.html" class="btn btn-secondary">Let's Talk</a>
                 </div>
-            </div>
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="hero" class="hero-section">
-        <div class="container">
+    <section class="hero" id="home">
+        <div class="hero-shapes">
+            <div class="hero-shape hero-shape-1"></div>
+            <div class="hero-shape hero-shape-2"></div>
+            <div class="hero-shape hero-shape-3"></div>
+        </div>
+        <div class="container hero-container">
             <div class="hero-content">
-                <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100" id="hero-title"></h1>
-                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200" id="hero-subtitle"></p>
-                <div class="hero-cta" data-aos="fade-up" data-aos-delay="300" id="hero-cta"></div>
+                <div class="hero-subtitle">Business Transformation Architect & Process Excellence Catalyst</div>
+                <h1 class="hero-title">Business Complexity Holding You Back?<br>I'll <span class="text-gradient">Transform That</span>.</h1>
+                <p class="hero-description">
+                    You've exhausted traditional approaches—shared services, outsourcing, process optimization—but costs remain high while operational efficiencies plateau. I help enterprises transform their business operations from cost centers to strategic value drivers.
+                </p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-secondary">Schedule Your Free Consultation</a>
+                    <a href="#problem" class="btn btn-outline">Discover My Approach</a>
+                </div>
             </div>
-            <div class="hero-image" data-aos="fade-left" data-aos-delay="400">
-                <div class="profile-image-container" id="hero-image"></div>
-            </div>
-        </div>
-        <div class="hero-bg-elements">
-            <div class="dot-pattern"></div>
-            <div class="gradient-sphere"></div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section about-section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title" id="about-title"></h2>
-                <p class="section-description" id="about-description"></p>
-            </div>
-            <div class="about-content" data-aos="fade-up" data-aos-delay="100">
-                <div class="about-text" id="about-text"></div>
-                <div class="about-stats" id="about-stats"></div>
+            <div class="hero-image-container">
+                <div class="hero-image-bg"></div>
+                <img src="/images/saurav.jpeg" alt="Saurav Wadhwa - Business Transformation Architect" class="hero-image">
             </div>
         </div>
     </section>
 
-    <!-- Expertise Section -->
-    <section id="expertise" class="section expertise-section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title" id="expertise-title"></h2>
-                <p class="section-description" id="expertise-description"></p>
+    <!-- Problem Section -->
+    <section class="problem" id="problem">
+        <!-- Blob SVGs -->
+        <div class="blob blob-1">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="var(--primary)" d="M43.1,-73.6C57.1,-67.5,70.3,-57.5,77.7,-44.2C85.1,-30.8,86.6,-14.4,83.5,0.6C80.4,15.6,72.7,29.3,64.4,42.7C56.1,56.1,47.1,69.3,34.7,74.6C22.3,79.8,6.5,77.2,-7.8,72.3C-22.1,67.5,-35,60.4,-47.7,51.7C-60.4,43,-73,32.6,-78.1,19.3C-83.2,5.9,-80.9,-10.5,-75.2,-25.4C-69.6,-40.3,-60.6,-53.7,-48.3,-60.7C-36,-67.7,-20.5,-68.3,-4.9,-60.3C10.7,-52.3,29.1,-79.7,43.1,-73.6Z"></path>
+            </svg>
+        </div>
+        <div class="blob blob-2 blob-rotate">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="var(--secondary)" d="M38.1,-65.2C50.8,-59.8,63.5,-52.6,69.7,-41.7C75.9,-30.8,75.5,-16.4,71.9,-3.9C68.3,8.7,61.6,19.7,55.3,31.3C49,42.9,43.1,55.1,33.2,62.1C23.2,69.1,9.1,70.9,-4.1,69.1C-17.3,67.3,-29.6,62,-38.4,53.7C-47.3,45.3,-52.6,33.9,-56.7,22.4C-60.7,10.8,-63.4,-0.9,-63.4,-13.5C-63.4,-26.1,-60.7,-39.6,-52.5,-48.1C-44.2,-56.7,-30.5,-60.3,-17.9,-65.8C-5.3,-71.2,7.3,-78.5,19.3,-78.2C31.3,-77.9,42.8,-70,38.1,-65.2Z"></path>
+            </svg>
+        </div>
+        <div class="container problem-container">
+            <div class="problem-header">
+                <span class="section-tag">The Challenges You Face</span>
+                <h2>I Solve the <span class="text-accent">Operational Challenges</span> Weighing Down Your Growth</h2>
+                <p>
+                    As a business leader, you face relentless pressure to deliver more with less. I've helped over 800 companies overcome these exact obstacles—transforming their operational performance and unlocking sustainable growth.
+                </p>
             </div>
-            <div class="expertise-grid" id="expertise-grid"></div>
+            <div class="problem-cards">
+                <div class="problem-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="problem-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3 class="problem-title">Rising Operational Costs</h3>
+                    <p class="problem-description">
+                        Your operational expenses keep climbing while efficiency plateaus. Every initiative seems to yield diminishing returns, putting pressure on your margins and threatening your competitive position.
+                    </p>
+                    <div class="problem-check">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Manual processes consuming excessive resources</span>
+                    </div>
+                    <div class="problem-check">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Inefficient workflows causing delays</span>
+                    </div>
+                    <div class="problem-check">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Technology investments not delivering expected ROI</span>
+                    </div>
+                </div>
+                <div class="problem-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="problem-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="problem-title">Data Silos & Poor Visibility</h3>
+                    <p class="problem-description">
+                        Critical information is trapped in departmental silos, making real-time decision-making nearly impossible. Reports are inconsistent, and you lack the insights needed to respond to market changes quickly.
+                    </p>
+                    <div class="problem-check">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Fragmented systems and disconnected data</span>
+                    </div>
+                    <div class="problem-check">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Manual reporting consuming valuable time</span>
+                    </div>
+                    <div class="problem-check">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Inconsistent metrics across departments</span>
+                    </div>
+                </div>
+                <div class="problem-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="problem-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="problem-title">Stalled Digital Transformation</h3>
+                    <p class="problem-description">
+                        Your digital initiatives aren't delivering the promised value. Despite significant investments, transformation efforts have stalled, leaving you with a patchwork of solutions and unrealized potential.
+                    </p>
+                    <div class="problem-check">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Failed or underperforming automation projects</span>
+                    </div>
+                    <div class="problem-check">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Resistance to change across the organization</span>
+                    </div>
+                    <div class="problem-check">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Tech solutions implemented without process optimization</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Insights Section -->
-    <section id="insights" class="section insights-section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title" id="insights-title"></h2>
-                <p class="section-description" id="insights-description"></p>
+    <section class="insights" id="insights">
+        <div class="container insights-container">
+            <div class="insights-header">
+                <span class="section-tag">Leadership Insights</span>
+                <h2>Fresh Perspectives on <span class="text-accent">Business Transformation</span></h2>
+                <p>
+                    Drawing from over two decades of experience and 800+ business transformations, I share actionable insights that can immediately impact your operational excellence journey.
+                </p>
             </div>
-            <div class="insights-tabs" data-aos="fade-up" data-aos-delay="100">
-                <div class="tabs-nav" id="insights-tabs-nav"></div>
-                <div class="tabs-content" id="insights-tabs-content"></div>
+            <div class="insights-grid" id="insights-grid">
+                <!-- Insights will be populated by JavaScript from JSON -->
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section experience-section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title" id="experience-title"></h2>
-                <p class="section-description" id="experience-description"></p>
+    <!-- Impact Stories Section -->
+    <section class="impact-stories" id="impact">
+        <div class="container impact-container">
+            <div class="impact-header">
+                <span class="section-tag">Success Stories</span>
+                <h2>Transforming Vision into <span class="text-gradient">Measurable Results</span></h2>
+                <p>
+                    My strategies don't just sound good on paper—they deliver tangible business outcomes that impact your bottom line. Here's what my clients have achieved.
+                </p>
             </div>
-            <div class="experience-timeline" data-aos="fade-up" data-aos-delay="100" id="experience-timeline"></div>
+            <div class="impact-grid" id="impact-grid">
+                <!-- Impact stories will be populated by JavaScript from JSON -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Approach Section -->
+    <section class="approach" id="approach">
+        <div class="container approach-container">
+            <div class="approach-header">
+                <span class="section-tag">My Philosophy</span>
+                <h2>A Proven Methodology for <span class="text-gradient">Sustainable Results</span></h2>
+                <p>
+                    My approach combines strategic vision with practical execution, ensuring that transformations deliver both immediate wins and long-term competitive advantages.
+                </p>
+            </div>
+            <div class="approach-pillars">
+                <div class="pillar-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pillar-number">01</div>
+                    <div class="pillar-title">
+                        <div class="pillar-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        Diagnostic Excellence
+                    </div>
+                    <p class="pillar-description">Deep-dive analysis that uncovers root causes and hidden opportunities within your existing processes and systems.</p>
+                </div>
+                <div class="pillar-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="pillar-number">02</div>
+                    <div class="pillar-title">
+                        <div class="pillar-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        Human-Centered Design
+                    </div>
+                    <p class="pillar-description">Solutions engineered with the end-user in mind, ensuring adoption and sustainable change across your organization.</p>
+                </div>
+                <div class="pillar-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="pillar-number">03</div>
+                    <div class="pillar-title">
+                        <div class="pillar-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        Intelligent Automation
+                    </div>
+                    <p class="pillar-description">Strategic implementation of automation that augments human capabilities and delivers exponential efficiency gains.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="section testimonials-section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title" id="testimonials-title"></h2>
-                <p class="section-description" id="testimonials-description"></p>
+    <section class="testimonials" id="testimonials">
+        <div class="container testimonials-container">
+            <div class="testimonials-header">
+                <span class="section-tag">Client Experiences</span>
+                <h2>What <span class="text-gradient">Leaders Say</span> About Our Work</h2>
+                <p>
+                    I've had the privilege of partnering with forward-thinking executives across various industries. Here's what they have to say about our collaboration.
+                </p>
             </div>
-            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-                <div class="swiper-wrapper" id="testimonials-wrapper"></div>
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section contact-section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title" id="contact-title"></h2>
-                <p class="section-description" id="contact-description"></p>
-            </div>
-            <div class="contact-content" data-aos="fade-up" data-aos-delay="100">
-                <div class="contact-info" id="contact-info"></div>
-                <div class="contact-form-container">
-                    <form id="contact-form" class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div>
+            <div class="testimonials-slider" id="testimonials-slider">
+                <!-- Testimonials will be populated by JavaScript from JSON -->
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="footer" class="footer">
+    <footer>
         <div class="container">
-            <div class="footer-content" id="footer-content"></div>
+            <div class="footer-grid">
+                <div class="footer-column footer-brand">
+                    <h3><i class="fas fa-bolt"></i> Saurav Wadhwa</h3>
+                    <p>Business Transformation Architect & Process Excellence Expert with over two decades of experience helping enterprises maximize operational efficiency and drive sustainable growth.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/in/sauravwadhwa/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Navigate</h3>
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#insights">Insights</a>
+                        <a href="#impact">Impact Stories</a>
+                        <a href="pages/about.html">About</a>
+                        <a href="pages/journey.html">Journey</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-heading">Contact</h3>
+                    <div class="footer-contact">
+                        <i class="fas fa-envelope"></i>
+                        <div class="footer-contact-info">
+                            <strong>Email</strong>
+                            <a href="mailto:saurav.wadhwa@myndsol.com">saurav.wadhwa@myndsol.com</a>
+                        </div>
+                    </div>
+                    <div class="footer-contact">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="footer-contact-info">
+                            <strong>Location</strong>
+                            <span>Gurgaon, Haryana, India</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="footer-bottom">
-                <div class="copyright" id="footer-copyright"></div>
-                <div class="social-links" id="social-links"></div>
+                <div class="footer-copyright">
+                    &copy; <span id="current-year">2025</span> Saurav Wadhwa. All rights reserved.
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <div class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </div>
-
-    <!-- Libraries -->
+    <!-- JavaScript Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/10.3.1/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-    <!-- Custom JS -->
-    <script src="assets/js/content-loader.js"></script>
-    <script src="assets/js/components/navigation.js"></script>
-    <script src="assets/js/components/animations.js"></script>
-    <script src="assets/js/components/tabs.js"></script>
-    <script src="assets/js/components/stats-counter.js"></script>
-    <script src="assets/js/components/testimonials-slider.js"></script>
-    <script src="assets/js/components/dark-mode.js"></script>
-    <script src="assets/js/components/form-handler.js"></script>
-    <script src="assets/js/main.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/testimonials.js"></script>
 </body>
 </html>
